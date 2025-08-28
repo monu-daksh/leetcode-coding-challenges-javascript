@@ -78,6 +78,31 @@ function getPairs(nums, k){
 
 console.log(getPairs(nums, k))
 ```
+## 📌 4. Replace Every Vowel with Next Alphabet
+```javascript
+// 👉 function to Replace Every Vowel with Next Alphabet
+
+let str = "hello world"
+Expected Output: "hfllp wprld"
+Replace vowels: a→b, e→f, i→j, o→p, u→v.
+
+function replaceEveryVowelwithNextAlphabet(str){
+    let vowels = "aeiouAEIOU"  
+    let result = ""
+    
+    for(let char of str){  
+        if(vowels.includes(char)){  
+            result += String.fromCharCode(char.charCodeAt(0)+ 1)
+        }else{
+            result += char
+        }
+    }
+    return result
+}
+
+console.log(replaceEveryVowelwithNextAlphabet(str))
+
+```
 
 
 
