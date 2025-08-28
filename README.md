@@ -15,7 +15,7 @@ It is designed to help developers **learn problem-solving** and **prepare for co
 - ✅ Structured by **topic & difficulty**  
 - ✅ Beginner-friendly + Interview-ready  
 
-## 📌 Example Problem: Two Sum
+## 📌 1. Example Problem: Two Sum
 ```javascript
 // Problem: Given an array of numbers, return indices of the two numbers that add up to target.
 
@@ -30,7 +30,7 @@ function twoSum(nums, target) {
 console.log(twoSum([2,7,11,15], 9)); // [0,1]
 
 ```
-## 📌 Rearrange Digits to Form Largest Number
+## 📌 2. Rearrange Digits to Form Largest Number
 ```javascript
 // 👉 Rearrange digits of n to form the largest possible number.
 
@@ -54,7 +54,30 @@ function makeLargestNumber(n){
     
 }
 console.log(makeLargestNumber(n))
-
-
-
 ```
+## 📌 3. Count Unique Pairs with Given Difference
+```javascript
+// 👉 function to Count Unique Pairs with Given Difference
+
+Input: nums = [1, 5, 3, 4, 2], k = 2
+Output: { pairs: [ [ 1, 3 ], [ 3, 5 ], [ 2, 4 ] ], count: 3 }
+
+function getPairs(nums, k){
+    let count =0
+    let pairs = []
+    
+    let newSet = new Set(nums)
+    for(let num of nums){
+        if(newSet.has(num+k)){
+            pairs.push([num, num+k])
+            count++
+        }
+    }
+    return{pairs, count}
+}
+
+console.log(getPairs(nums, k))
+```
+
+
+
