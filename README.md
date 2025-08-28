@@ -29,3 +29,30 @@ function twoSum(nums, target) {
 }
 console.log(twoSum([2,7,11,15], 9)); // [0,1]
 
+```
+## 📌 Rearrange Digits to Form Largest Number
+Input: n = 34091
+Output: 94310
+```javascript
+
+function makeLargestNumber(n){
+    let digits = []
+    let result = 0
+    
+    while(n > 0){
+        digits.push(n % 10)
+        n = Math.floor(n / 10)
+    }
+    digits.sort((a, b) => b -a)
+    
+    for(let d of digits){
+        result = result * 10 + d
+    }
+    return result
+    
+}
+console.log(makeLargestNumber(n))
+
+
+
+```
