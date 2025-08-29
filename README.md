@@ -101,8 +101,39 @@ function replaceEveryVowelwithNextAlphabet(str){
 }
 
 console.log(replaceEveryVowelwithNextAlphabet(str))
+```
+## 📌 5. Consecutive Number Sum
+```javascript
+// 👉 Problem: Given an array of integers, find the longest consecutive increasing subsequence sum
+
+let arr = [3, 2, 1, 2, 3, 4, 1]
+output: 10  // 1+2+3+4
+
+function sumeOfConsecutiveArr(arr){
+    let sortedArr = [...new Set(arr)].sort((a, b)=> a -b)
+    let longestArr = []
+    let currentArr = [sortedArr[0]]
+    
+    for(let i=1; i < sortedArr.length; i++){
+        if(sortedArr[i] - sortedArr[i -1] ===1){
+            currentArr.push(sortedArr[i])
+        }else{
+            if(currentArr.length > longestArr.length){
+                longestArr = currentArr
+            }
+            currentArr = sortedArr[i]
+        }
+    }
+    
+    if(currentArr.length > longestArr.length){
+        longestArr = currentArr
+    }
+    return longestArr.reduce((acc, sum) => acc += sum, 0)
+}
+
+console.log(sumeOfConsecutiveArr(arr))
+
+
 
 ```
-
-
 
