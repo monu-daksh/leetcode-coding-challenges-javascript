@@ -172,3 +172,65 @@ console.log(reverseArr(arr))
 ```
 
 
+## 📌 8. Remove Duplicates (in-place)
+```javascript
+let arr = [1,2,2,3,4,4,5]
+// output [1, 2, 3, 4, 5]  
+
+//👉 In-place work only when array is sorted
+
+function removeDuplicate(arr){
+    let slow =0 // track unique arr
+    for(let fast =1; fast < arr.length; fast++){
+        if(arr[fast] !== arr[slow]){
+            slow++
+            arr[slow] = arr[fast]
+        }
+    }
+    return arr.slice(0, slow+1) 
+}
+
+console.log(removeDuplicate(arr))
+```
+
+## 📌 9. Flatten Nested Array
+```javascript
+let arr = [1, [2, 3], [4, [5, 6]]]
+// Output: [1, 2, 3, 4, 5, 6]
+
+function flattenArr(arr){
+    return arr.reduce((acc, item) =>{
+        if(Array.isArray(item)){
+            acc.push(...flattenArr(item))
+        }else{
+            acc.push(item)
+        }
+        return acc
+    }, [])
+}
+console.log(flattenArr(arr))
+```
+
+## 📌 10. Group Elements by Type
+```javascript
+
+let arr = [1, "a", 2, "b", 3]
+// Output: { numbers: [1, 2, 3], strings: ["a", "b"] }
+
+function groupElement(arr){
+    return arr.reduce((acc, item)=>{
+        if(typeof item === "number"){
+            acc.numbers.push(item)
+        }else{
+            acc.strings.push(item)
+        }
+        return acc
+        
+    }, {numbers:[], strings:[]})
+}
+console.log(groupElement(arr))
+
+
+```
+
+
