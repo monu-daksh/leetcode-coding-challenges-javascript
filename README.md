@@ -133,7 +133,23 @@ function sumeOfConsecutiveArr(arr){
 
 console.log(sumeOfConsecutiveArr(arr))
 
+```
+## 📌 5. Mirror Words
 
+```javascript
+// 👉 Problem: Given a string, return true if every word in the string is a palindrome when reversed.
+
+let str = "madam racecar noon";
+output: true
+
+function areAllWordsPalindrome(sentence) {
+    return sentence.split(" ").every(
+        word => word === word.split("").reverse().join("")
+    );
+}
+
+console.log(areAllWordsPalindrome(str)); 
 
 ```
+
 
