@@ -134,7 +134,7 @@ function sumeOfConsecutiveArr(arr){
 console.log(sumeOfConsecutiveArr(arr))
 
 ```
-## 📌 5. Mirror Words
+## 📌 6. Mirror Words
 
 ```javascript
 // 👉 Problem: Given a string, return true if every word in the string is a palindrome when reversed.
@@ -150,6 +150,25 @@ function areAllWordsPalindrome(sentence) {
 
 console.log(areAllWordsPalindrome(str)); 
 
+```
+## 📌 7. Reverse an Array (in-place)
+```javascript
+
+let arr = [1, 2, 3, 4, 5]
+// Output: [5, 4, 3, 2, 1]
+
+
+function reverseArr(arr){
+    let right = arr.length -1
+    let left = 0
+    while(left < right){
+        [arr[left], arr[right]] = [arr[right], arr[left]]
+        left++
+        right--
+    }
+    return arr
+}
+console.log(reverseArr(arr))
 ```
 
 
