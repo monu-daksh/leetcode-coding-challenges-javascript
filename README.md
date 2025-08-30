@@ -314,7 +314,18 @@ function findSumPair(obj){
 }
 console.log(findSumPair(obj))
 ```
+## 📌 14. Generate Range of Numbers (Without using loop)
+```javascript
+let obj = { start: 5, end: 10 }
+// Output: [5, 6, 7, 8, 9, 10]
 
+function generateRange(obj){
+    const {start, end} = obj
+    let size = end - start +1
+    return Array.from({length:size}, (_, i)=> start+i)
+}
+console.log(generateRange(obj))
+```
 
 
 
