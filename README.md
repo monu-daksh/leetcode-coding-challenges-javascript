@@ -284,6 +284,37 @@ function chunkArr(obj){
 }
 console.log(chunkArr(obj))
 ```
+## 📌 13. Find Pairs with Sum (Two Pointer)
+```javascript
+let obj= { array: [2, 4, 5, 3, 1, 6], targetSum: 7 }
+// Output: [[2, 5], [4, 3], [1, 6]]
+
+
+function findSumPair(obj){
+    const {array, targetSum} = obj
+    let sortedArr = array.sort((a, b)=> a -b) 
+    
+    let left = 0
+    let right = sortedArr.length -1
+    let result = []
+    
+    while(left < right){
+        let currentSum = sortedArr[left] + sortedArr[right]
+        if(currentSum === targetSum){
+            result.push([sortedArr[left], sortedArr[right]])
+            left++
+            right--
+        }else if(currentSum < targetSum){
+            left++
+        }else{
+            right--
+        }
+    }
+    return result
+}
+console.log(findSumPair(obj))
+```
+
 
 
 
