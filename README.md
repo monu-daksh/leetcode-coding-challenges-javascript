@@ -327,6 +327,32 @@ function generateRange(obj){
 console.log(generateRange(obj))
 ```
 
+## 📌 15. Convert to Camel Case
+```javascript
+let str = "hello_world_example"
+// Output: "helloWorldExample"
+
+
+function convertIntoCamelCase(str){
+    let result = []
+    let makeUpper = false
+    
+    for(let char of str){
+        if(char === "_"){
+            makeUpper = true
+            continue
+        }
+        if(makeUpper){
+            result.push(char.toUpperCase())
+            makeUpper = false
+        }else{
+            result.push(char)
+        }
+    }
+    return result.join("")
+}
+console.log(convertIntoCamelCase(str))
+```
 
 
 
