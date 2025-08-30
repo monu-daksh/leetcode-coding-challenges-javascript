@@ -264,6 +264,26 @@ function interSectionArr(obj){
 }
 console.log(interSectionArr(obj))
 ```
+## 📌 12. Chunking an Array
+```javascript
+let obj = { array: [1, 2, 3, 4, 5, 6, 7], size: 3 }
+// Output: [[1, 2, 3], [4, 5, 6], [7]]
+
+
+function chunkArr(obj){
+    let {array, size} = obj
+    let i = 0
+    let result = []
+    
+    while(i < array.length){
+        let subArr = array.slice(i, i+size)
+        result.push(subArr)
+        i+=size
+    }
+    return result
+}
+console.log(chunkArr(obj))
+```
 
 
 
