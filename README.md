@@ -198,6 +198,8 @@ console.log(removeDuplicate(arr))
 let arr = [1, [2, 3], [4, [5, 6]]]
 // Output: [1, 2, 3, 4, 5, 6]
 
+//👉 function to flatten nested array
+
 function flattenArr(arr){
     return arr.reduce((acc, item) =>{
         if(Array.isArray(item)){
@@ -229,8 +231,40 @@ function groupElement(arr){
     }, {numbers:[], strings:[]})
 }
 console.log(groupElement(arr))
-
-
 ```
+## 📌 11. Intersection of Arrays (Two Pointer)
+``` javascript
+let obj ={ array1: [1, 2, 3, 4], array2: [3, 4, 5, 6] }
+// Output: [3, 4]
+
+function interSectionArr(obj){
+    const {array1:arr1, array2:arr2} = obj
+    
+    let sortedArr1 = arr1.sort((a, b) => a - b)
+    let sortedArr2 = arr2.sort((a, b) => a - b)
+    
+    let i =0
+    let j = 0
+    
+    let result = []
+    
+    while( i < sortedArr1.length && j < sortedArr2.length){
+         let isSame = sortedArr1[i] === sortedArr2[j]
+         if(isSame){
+             result.push(sortedArr1[i])
+              i++
+              j++
+         }else if(sortedArr1[i] < sortedArr2[j]){
+             i++
+         }else{
+             j++
+         }
+    }
+    return result
+}
+console.log(interSectionArr(obj))
+```
+
+
 
 
