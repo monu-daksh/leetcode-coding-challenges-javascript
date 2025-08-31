@@ -415,7 +415,7 @@ console.log(extractURL(str))
 
 ```
 
-## 📌 18. Find Longest Word
+## 📌 19. Find Longest Word
 ```javascript
 let str = "The quick brown fox jumps"
 // Output: "quick"
@@ -425,3 +425,22 @@ function longestStr(str){
 }
 console.log(longestStr(str))
 ```
+## 📌 20. Reverse Words in a String
+```javascript
+let str = "Hello World"
+// Output: "olleH dlroW"
+
+
+function reverseStrWords(str){
+// return str.split(" ").map((word) => word.split("").reverse().join("")).join(" ")
+   let result = ""
+   
+   for(let word of str.split(" ")){
+        result += word.split("").reverse().join("")+" "
+   }
+   return result.trim()
+}
+
+console.log(reverseStrWords(str))
+```
+
