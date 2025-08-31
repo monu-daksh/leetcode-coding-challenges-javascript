@@ -403,4 +403,15 @@ function trimStr(str){
 console.log(trimStr(str))
 ```
 
+## 📌 18. Extract Domain from URL
+```javascript
+let str = "https://www.example.com/path"
+// Output: "example.com"
+
+function extractURL(str){
+      return new URL(str).hostname.split("www.")[1]
+}
+console.log(extractURL(str))
+
+```
 
