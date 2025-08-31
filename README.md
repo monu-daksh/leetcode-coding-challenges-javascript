@@ -353,6 +353,25 @@ function convertIntoCamelCase(str){
 }
 console.log(convertIntoCamelCase(str))
 ```
+## 📌 15. Convert into snake case
+```javascript
+let str = "helloWorldExample"
+// Output: "hello_world_example"
+
+
+function convertIntoSnakeCase(str){
+    return str.split("").reduce((acc, char)=>{
+        if(char === char.toUpperCase()){
+            acc += "_" + char
+        }else{
+            acc += char
+        }
+        return acc
+    }, "")
+}
+
+console.log(convertIntoSnakeCase(str))
+```
 
 
 
