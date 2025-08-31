@@ -383,6 +383,24 @@ function charCount(obj){
 }
 console.log(charCount(obj))
 ```
+## 📌 17. Trim Whitespace
+```javascript
+let str = "  hello world  "
+// Output: "hello world"
 
+function trimStr(str){
+    let left = 0
+    let right = str.length -1
+    
+    while(str[left] === " " && left <= right){
+        left++
+    }
+    while(str[right] === " " && right >= left){
+        right--
+    }
+    return str.slice(left, right+1)
+}
+console.log(trimStr(str))
+```
 
 
