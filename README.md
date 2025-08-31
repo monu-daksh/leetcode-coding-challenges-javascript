@@ -372,6 +372,17 @@ function convertIntoSnakeCase(str){
 
 console.log(convertIntoSnakeCase(str))
 ```
+## 📌 16. Count Character Occurrences
+```javascript
+let obj = { string: "hello", char: "l" }
+// Output: 2
+
+function charCount(obj){
+    const {string, char} = obj
+    return string.split(char).length - 1
+}
+console.log(charCount(obj))
+```
 
 
 
