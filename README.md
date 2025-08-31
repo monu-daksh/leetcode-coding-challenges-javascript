@@ -415,3 +415,13 @@ console.log(extractURL(str))
 
 ```
 
+## 📌 18. Find Longest Word
+```javascript
+let str = "The quick brown fox jumps"
+// Output: "quick"
+
+function longestStr(str){
+    return str.split(" ").sort((a, b)=> b.length - a.length)[0]
+}
+console.log(longestStr(str))
+```
