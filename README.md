@@ -570,5 +570,31 @@ function filterKey(input){
 }
 console.log(filterKey(input))
 ```
+## 📌 26. Group By Property
+```javascript
+let arr = [
+  { name: "Alice", age: 25 },
+  { name: "Bob", age: 30 },
+  { name: "Charlie", age: 25 }
+]
+// Output: {
+//   "25": [{ name: "Alice", age: 25 }, { name: "Charlie", age: 25 }],
+//   "30": [{ name: "Bob", age: 30 }]
+// }
+
+
+function groupByProperty(input){
+    let result = {}
+    return input.reduce((acc, obj)=>{
+        if(!acc[obj.age]){
+            acc[obj.age] = []
+        }
+        acc[obj.age].push(obj)
+        return acc
+    }, {})
+    
+}
+console.log(groupByProperty(arr))
+```
 
 
