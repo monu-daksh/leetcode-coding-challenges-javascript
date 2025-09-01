@@ -511,7 +511,7 @@ function removeChars(obj){
 }
 console.log(removeChars(obj))
 ```
-## 📌 22. Truncate String
+## 📌 23. Truncate String
 ```javascript
 let obj = { string: "This is a long sentence", maxLength: 10 }
 // Output: "This is a..."
@@ -532,5 +532,28 @@ function turncate(obj){
     return result
 }
 console.log(turncate(obj))
+```
+## 📌 24. Merge Two Objects
+```javascript
+let  obj= { obj1: { a: 1, b: 2 }, obj2: { b: 3, c: 4 } }
+// Output: { a: 1, b: 3, c: 4 }
+
+
+function mergeTwoObject(obj){
+    let {obj1, obj2} = obj
+    // return {...obj1, obj2}   ---> solution: 1
+    // return Object.assign({}, obj1, obj2) ---> solution: 2
+    
+    let result = {...obj1}
+    for(let key in obj2){
+        if(result[key]){
+            result[key] = obj2[key]
+        }else{
+            result[key] = obj2[key]
+        }
+    }
+    return result
+}
+console.log(mergeTwoObject(obj))
 ```
 
