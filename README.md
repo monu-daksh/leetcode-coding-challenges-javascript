@@ -556,4 +556,19 @@ function mergeTwoObject(obj){
 }
 console.log(mergeTwoObject(obj))
 ```
+## 📌 25. Filter Object Properties
+```javascript
+let input = { obj: { a: 1, b: 2, c: 3, d: 4 }, keep: ["a", "c"] }
+// Output: { a: 1, c: 3 }
+
+function filterKey(input){
+    const {obj, keep} = input
+    return keep.reduce((acc, key) => {
+        if(obj[key]) acc[key] = obj[key]
+        return acc
+    }, {})
+}
+console.log(filterKey(input))
+```
+
 
