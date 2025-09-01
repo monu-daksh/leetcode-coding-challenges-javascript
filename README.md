@@ -475,4 +475,19 @@ function checkAnagram(obj){
 }
 console.log(checkAnagram(obj))
 ```
+## 📌 21. Convert to Title Case
+```javascript
+let str = "the quick brown fox"
+// Output: "The Quick Brown Fox"
+
+function capitalizeWords()(str){
+    let result = ""
+    for(let word of str.split(" ")){
+           word = word[0].toUpperCase() + word.slice(1).toLowerCase()
+           result+= word + " "
+    }
+    return result.trim()
+}
+console.log(convertFirstCap(str))
+```
 
