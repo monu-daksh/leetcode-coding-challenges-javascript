@@ -596,5 +596,39 @@ function groupByProperty(input){
 }
 console.log(groupByProperty(arr))
 ```
+## 📌 27. Some special case
+```javascript
+  console.log(null == undefined);
+// If x is null and y is undefined, or vice-versa → return true. (No further coercion happens. (ECMA-262 spec))
 
+
+// Strict Equality (===) checks both value & type
+  console.log(null === undefined);  
+// Output: false
+// Because null is of type "object" and undefined is of type "undefined"
+// Different types → strictly not equal
+
+
+// Loose Equality (==) allows coercion but has special rules
+console.log(null == 0);           
+// Output: false
+// null only equals undefined (special case), not any number
+
+
+console.log(undefined == 0);      
+// Output: false
+// undefined also only equals null, not a number
+
+
+// Explicit conversion using Number()
+console.log(Number(null));        
+// Output: 0
+// null is treated as "empty" → converts to 0
+
+
+console.log(Number(undefined));   
+// Output: NaN
+// undefined cannot be converted to a valid number → gives NaN
+
+```
 
