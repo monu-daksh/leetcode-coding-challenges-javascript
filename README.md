@@ -480,7 +480,7 @@ console.log(checkAnagram(obj))
 let str = "the quick brown fox"
 // Output: "The Quick Brown Fox"
 
-function capitalizeWords()(str){
+function capitalizeWords(str){
     let result = ""
     for(let word of str.split(" ")){
            word = word[0].toUpperCase() + word.slice(1).toLowerCase()
@@ -488,6 +488,27 @@ function capitalizeWords()(str){
     }
     return result.trim()
 }
-console.log(convertFirstCap(str))
+console.log(capitalizeWords(str))
+```
+## 📌 22. Remove Specific Characters
+```javascript
+let obj = { string: "hello world", charsToRemove: "lo" }
+// Output: "he wrd"
+
+
+function removeChars(obj){
+    const {string, charsToRemove} = obj
+    let result= ''
+    
+    for(let chars of string){
+        if(charsToRemove.includes(chars)){
+            chars = ""
+        }else{
+            result += chars
+        }
+    }
+    return result
+}
+console.log(removeChars(obj))
 ```
 
