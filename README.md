@@ -443,4 +443,36 @@ function reverseStrWords(str){
 
 console.log(reverseStrWords(str))
 ```
+## 📌 21. Check Anagrams
+```javascript
+ let obj ={ string1: "listen", string2: "silent" }
+// Output: true
+
+
+function checkAnagram(obj){
+    const {string1, string2} = obj
+    
+    if(string1.length !== string2.length){
+        return false
+    }
+    let obj1 = {} //{ l: 1, i: 1, s: 1, t: 1, e: 1, n: 1 }
+    let obj2 = {}
+    
+    for(let char of string1){
+        obj1[char] = (obj1[char] || 0) +1
+    }
+    
+    for(let char of string2){
+        obj2[char] = (obj2[char] || 0) +1
+    }
+    
+    for(let char in obj2){
+        if(obj1[char] !== obj2[char] ){
+            return false
+        }
+    }
+    return true
+}
+console.log(checkAnagram(obj))
+```
 
