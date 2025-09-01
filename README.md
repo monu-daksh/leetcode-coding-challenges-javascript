@@ -631,4 +631,14 @@ console.log(Number(undefined));
 // undefined cannot be converted to a valid number → gives NaN
 
 ```
+## 📌 28. When Objects used as a key
+```javascript
+
+let obj = {};
+obj[{}] = "first";
+obj[{}] = "second";
+console.log(obj);
+
+//{ '[object Object]': 'second' }
+```
 
