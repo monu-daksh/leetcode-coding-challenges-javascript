@@ -511,4 +511,26 @@ function removeChars(obj){
 }
 console.log(removeChars(obj))
 ```
+## 📌 22. Truncate String
+```javascript
+let obj = { string: "This is a long sentence", maxLength: 10 }
+// Output: "This is a..."
+
+function turncate(obj){
+    const {string, maxLength} = obj
+    let strlen = string.length
+    
+    let result = ""
+    
+    for(let char of string){
+      if(string.length > maxLength){
+          result = string.slice(0, maxLength) + "..."
+      }else{
+          result += char
+      }
+    }
+    return result
+}
+console.log(turncate(obj))
+```
 
