@@ -751,3 +751,30 @@ function sortByProperty(obj){
 }
 console.log(sortByProperty(obj))
 ```
+## 📌 33. Convert CSV to Array of Objects
+```javascript
+let input = "name,age,city\nAlice,25,New York\nBob,30,San Francisco"
+// Output: [
+//   { name: "Alice", age: "25", city: "New York" },
+//   { name: "Bob", age: "30", city: "San Francisco" }
+// ]
+
+function csvToArrObj(input){
+    let result = []
+    let keys = input.split("\n")[0].split(",")
+    let values = input.split("\n").slice(1)
+    
+    for(let value of values){
+        let splitValue = value.split(",")
+        let obj = {}
+        
+        for(let i = 0; i < splitValue.length; i++){
+             obj[keys[i]] = splitValue[i]
+        }
+        
+        result.push(obj)
+    }
+    return result
+}
+console.log(csvToArrObj(input))
+```
