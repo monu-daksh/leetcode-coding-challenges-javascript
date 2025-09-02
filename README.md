@@ -641,4 +641,24 @@ console.log(obj);
 
 //{ '[object Object]': 'second' }
 ```
+## 📌 29. Deep Clone Object
+```javascript
+let obj = { a: 1, b: { c: 2 } }
+// Output: { a: 1, b: { c: 2 } } 
 
+function deepClone(obj){
+    if(typeof obj !== "object" || obj === null){
+        return obj
+    }
+    let copy = Array.isArray(obj) ? [] :{}
+    for(let key in obj){
+        if(typeof obj[key] === "object" && obj[key] !== null){
+            copy[key] = deepClone(obj[key])
+        }else{
+            copy[key] = obj[key]
+        }
+    }
+    return copy
+}
+console.log(deepClone(obj))
+```
