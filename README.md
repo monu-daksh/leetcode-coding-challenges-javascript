@@ -727,3 +727,27 @@ function findObjById(obj){
 }
 console.log(findObjById(obj))
 ```
+
+## 📌 32. Sort Objects by Property
+```javascript
+let obj = {
+  array: [
+    { name: "Charlie", age: 30 },
+    { name: "Alice", age: 25 },
+    { name: "Bob", age: 35 }
+  ],
+  property: "age"
+}
+
+// Output: [
+//   { name: "Alice", age: 25 },
+//   { name: "Charlie", age: 30 },
+//   { name: "Bob", age: 35 }
+// ]
+
+function sortByProperty(obj){
+    const {array, property} = obj
+    return array.sort((a, b) => a[property] - b[property])
+}
+console.log(sortByProperty(obj))
+```
