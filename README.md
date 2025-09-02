@@ -702,3 +702,28 @@ function convertIntoObj(arr){
 }
 console.log(convertIntoObj(arr))
 ```
+## 📌 32. Find Object in Array
+```javascript
+let obj = { 
+  array: [
+    { id: 1, name: "Alice" },
+    { id: 2, name: "Bob" },
+    { id: 3, name: "Charlie" }
+  ],
+  property: "id",
+  value: 2
+}
+// Output: { id: 2, name: "Bob" }
+
+function findObjById(obj){
+    const {array, property, value} = obj
+    return array.reduce((acc, item) =>{
+        if(item[property] === value){
+            acc = {...item}
+        }
+        return acc
+        
+    }, {})
+}
+console.log(findObjById(obj))
+```
