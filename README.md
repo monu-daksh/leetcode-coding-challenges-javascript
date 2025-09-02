@@ -662,3 +662,28 @@ function deepClone(obj){
 }
 console.log(deepClone(obj))
 ```
+## 📌 29.. Flatten Object
+```javascript
+let obj =  { a: 1, b: { c: 2, d: { e: 3 } } }
+// Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
+
+function flattenObj(obj){
+    let stack = [{value:obj, parentKey:""}]
+    let result = {}
+    while(stack.length){
+        const {value, parentKey} = stack.pop()
+        
+        for(let key in value){
+            let combineKey = parentKey ? `${parentKey}.${key}` : key
+            
+            if(typeof value[key] === "object" && value[key] !== null){
+                stack.push({value:value[key], parentKey:combineKey})
+            }else{
+                result[combineKey] = value[key]
+            }
+        }
+    }
+    return result
+}
+console.log(flattenObj(obj))
+```
