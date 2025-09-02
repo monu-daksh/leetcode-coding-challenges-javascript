@@ -778,3 +778,21 @@ function csvToArrObj(input){
 }
 console.log(csvToArrObj(input))
 ```
+## 📌 34. Convert Array of Objects to CSV
+```javascript
+let arr = [
+  { name: "Alice", age: "25", city: "New York" },
+  { name: "Bob", age: "30", city: "San Francisco" }
+]
+// output = "name,age,city\nAlice,25,New York\nBob,30,San Francisco"
+
+function arrToIntoCSV(arr){
+    let keys = Object.keys( arr[0]).join(",")
+    let values = ""
+    for(let {name, age, city} of arr){
+         values += `${name},${age},${city}` + "\n"
+    }
+    return keys + "\n" + values
+}
+console.log(arrToIntoCSV(arr))
+```
