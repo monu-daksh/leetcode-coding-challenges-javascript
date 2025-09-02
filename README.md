@@ -662,7 +662,7 @@ function deepClone(obj){
 }
 console.log(deepClone(obj))
 ```
-## 📌 29.. Flatten Object
+## 📌 30. Flatten Object
 ```javascript
 let obj =  { a: 1, b: { c: 2, d: { e: 3 } } }
 // Output: { "a": 1, "b.c": 2, "b.d.e": 3 }
@@ -686,4 +686,19 @@ function flattenObj(obj){
     return result
 }
 console.log(flattenObj(obj))
+```
+
+## 📌 31. Convert Array to Object
+```javascript
+let arr = [["name", "Alice"], ["age", 25], ["city", "New York"]]
+// Output: { name: "Alice", age: 25, city: "New York" }
+
+function convertIntoObj(arr){
+    return arr.reduce((acc, item)=>{
+         const [key, value] = item
+         acc[key] = value
+        return acc
+    }, {})
+}
+console.log(convertIntoObj(arr))
 ```
