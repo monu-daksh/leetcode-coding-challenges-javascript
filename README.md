@@ -796,3 +796,21 @@ function arrToIntoCSV(arr){
 }
 console.log(arrToIntoCSV(arr))
 ```
+
+## 📌 35. Scoping
+```javascript
+Arrow function → this is lexical, not tied to the object.
+Normal function → this depends on the call-site.
+
+let x = 10;
+const foo = {
+  x: 20,
+  bar: () => console.log(this.x),
+  baz: function () {
+    console.log(this.x);
+  }
+};
+
+foo.bar();  // undefined
+foo.baz();  //20
+```
