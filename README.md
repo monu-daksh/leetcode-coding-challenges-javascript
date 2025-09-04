@@ -848,3 +848,29 @@ function findlongestSubStrWithoutRepeating(str){
 }
 console.log(findlongestSubStrWithoutRepeating(str))
 ```
+## 📌 37. Merge Objects
+```javascript
+let a = { user: { name: "Monu", skills: ["JS"] } };
+let b = { user: { age: 26, skills: ["React"] } };
+
+// output { user: { name: 'Monu', skills: [ 'JS', 'React' ], age: 26 } }
+
+function mergeTwoObjects(obj1, obj2) {
+  let result = { ...obj1 };
+  for (let key in obj2) {
+    if (Array.isArray(obj2[key]) && Array.isArray(result[key])) {
+      result[key] = [...result[key], ...obj2[key]];
+    } else if (
+      typeof obj2[key] === "object" &&
+      obj2[key] !== null &&
+      typeof result[key] === "object"
+    ) {
+      result[key] = mergeTwoObjects(result[key], obj2[key]);
+    } else {
+      result[key] = obj2[key];
+    }
+  }
+  return result;
+}
+console.log(mergeTwoObjects(a, b));
+```
