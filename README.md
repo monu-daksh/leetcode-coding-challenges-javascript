@@ -814,3 +814,37 @@ const foo = {
 foo.bar();  // undefined
 foo.baz();  //20
 ```
+## 📌 36. Longest Unique Substring
+```javascript
+let str = "abcabcbb"
+// Output: 3 ("abc")
+
+
+function findlongestSubStrWithoutRepeating(str){
+    let left = 0 // it will track unique str
+    let maxLen = 0 // unique str length
+    
+    let newSet = new Set()  // hold unique str
+    let longestStr = ""   // longest string
+    
+     for(let right =0; right < str.length; right++){
+        let currentChar = str[right]
+        while(newSet.has(currentChar)){// check if duplicate
+             newSet.delete(str[left]) // remove first duplicate
+             left++   // now it track only unique str
+        } 
+        newSet.add(currentChar) // add only unique value
+        
+        let strLen = right - left+1
+        if(strLen > maxLen){
+            maxLen = strLen
+            longestStr = str.slice(left, right+1)  // 1 for include last value
+        }
+    }
+    return{
+        maxLen,
+        longestStr
+    }
+}
+console.log(findlongestSubStrWithoutRepeating(str))
+```
