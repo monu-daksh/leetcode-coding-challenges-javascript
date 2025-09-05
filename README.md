@@ -874,3 +874,23 @@ function mergeTwoObjects(obj1, obj2) {
 }
 console.log(mergeTwoObjects(a, b));
 ```
+## 📌 38. Check if number is Prime
+```javascript
+let num = 9
+
+// A prime number is a natural number greater than 1 that is divisible only by 1 and itself.
+// ✅ Prime → 2, 3, 5, 7, 11, 13
+// ❌ Not Prime → 1 (special case), 4 (divisible by 2), 9 (divisible by 3)
+
+function isPrime(num){
+    if( num <= 1) return false
+    if(num === 2) return true
+    for(let i=2; i <= Math.sqrt(num); i++){
+         if(num % i === 0){
+             return false
+         }
+    }
+    return true
+}
+console.log(isPrime(num))
+```
