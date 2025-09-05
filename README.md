@@ -894,3 +894,21 @@ function isPrime(num){
 }
 console.log(isPrime(num))
 ```
+## 📌 39. Remove duplicate numbers
+```javascript
+
+let arr = [1,1,2,2,3,3,4]
+// Output: [1,2,3,4]
+
+function removeDuplicateArr(arr){
+    let left = 0 // slow track
+    for(let right=1; right < arr.length; right++){
+        if(arr[left] !== arr[right]){
+            left++
+            arr[left] = arr[right]
+        }
+    }
+     return arr.slice(0, left + 1);
+}
+console.log(removeDuplicateArr(arr))
+```
