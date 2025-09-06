@@ -234,35 +234,48 @@ console.log(groupElement(arr))
 ```
 ## 📌 11. Intersection of Arrays (Two Pointer)
 ``` javascript
-let obj ={ array1: [1, 2, 3, 4], array2: [3, 4, 5, 6] }
-// Output: [3, 4]
+function intersection(arr1, arr2){
+    // let result = []     -> 1 solution 
+    // for(let num of arr1){
+    //     if(arr2.includes(num)){
+    //         result.push(num)
+    //     }
+    // }
+    // return result
 
-function interSectionArr(obj){
-    const {array1:arr1, array2:arr2} = obj
-    
-    let sortedArr1 = arr1.sort((a, b) => a - b)
-    let sortedArr2 = arr2.sort((a, b) => a - b)
-    
-    let i =0
-    let j = 0
-    
+
+    // let newSet = new Set(arr1)  -> 2 solution
+    // let result = []
+    // for(let num of arr2){
+    //     if(newSet.has(num)){
+    //         result.push(num)
+    //     }
+    // }
+    // return result
+
+    // return arr1.filter((num) => arr2.includes(num))  -> 3 solution
+
     let result = []
+    let sortArr1 = arr1.sort((a, b) => a - b)
+    let sortArr2 = arr2.sort((a, b) => a -b)
+    let i =0
+    let j =0
     
-    while( i < sortedArr1.length && j < sortedArr2.length){
-         let isSame = sortedArr1[i] === sortedArr2[j]
-         if(isSame){
-             result.push(sortedArr1[i])
-              i++
-              j++
-         }else if(sortedArr1[i] < sortedArr2[j]){
-             i++
-         }else{
-             j++
-         }
+    while(i < sortArr1.length && j < sortArr2.length){
+        let isSame = sortArr1[i] === sortArr2[j]
+        if(isSame){
+            result.push(sortArr1[i])
+            i++
+            j++
+        }else if(sortArr1[i] < sortArr2[j]){
+            i++
+        }else{
+            j++
+        }
     }
-    return result
+    return  result
 }
-console.log(interSectionArr(obj))
+console.log(intersection(arr1, arr2))
 ```
 ## 📌 12. Chunking an Array
 ```javascript
