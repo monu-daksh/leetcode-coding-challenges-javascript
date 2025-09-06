@@ -953,3 +953,24 @@ function findSecondLarestNumber(arr){
 }
 console.log(findSecondLarestNumber(arr))
 ```
+## 📌 42. Rotate Array by K Steps
+```javascript
+// 7. Rotate Array by K Steps
+
+let nums = [1,2,3,4,5,6,7], k = 3
+// Output: [5,6,7,1,2,3,4]
+
+function rotateArrByKStep(nums, k){
+    // let firstSlice = nums.slice(0, k+1) // include -> exclude value
+    // let lastSlice = nums.slice(k+1) // skip kth value
+    // return lastSlice.concat(firstSlice)
+    
+    while(k !== 0){
+        let lastEl = nums.pop()
+        k--
+        nums.unshift(lastEl)
+    }
+    return nums 
+}
+console.log(rotateArrByKStep(nums, k))
+```
