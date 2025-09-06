@@ -974,3 +974,26 @@ function rotateArrByKStep(nums, k){
 }
 console.log(rotateArrByKStep(nums, k))
 ```
+## 📌 43. Find Missing Number
+```javascript
+let arr = [1,2,4,5,6] 
+// (range is 1 to 6)
+// Output: 3
+
+function findMissingNumber(arr){
+    // let n = arr.length +1
+    // let actualSum = n * (n +1)/2
+    // let expectedSum = arr.reduce((acc, num) => acc += num, 0)
+    // return actualSum - expectedSum
+    
+    
+    let min = Math.min(...arr)
+    let max = Math.max(...arr)
+    for(let i=min; i <= max; i++){
+        if(!arr.includes(i)){
+            return i
+        }
+    }
+}
+console.log(findMissingNumber(arr))
+```
