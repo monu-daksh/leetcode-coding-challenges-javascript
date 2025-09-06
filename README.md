@@ -928,3 +928,28 @@ function makeStrUnique(str){
 }
 console.log(makeStrUnique(str))
 ```
+## 📌 41. Find Second Largest Number
+```javascript
+let arr = [10, 5, 8, 20, 15]
+// Output: 15
+
+function findSecondLarestNumber(arr){
+    // arr.sort((a, b) => b -a)     -> 1 solution
+    // return arr[1]
+    
+    if(arr.length < 2) return null
+    
+    let firstMax = -Infinity
+    let secondMax = -Infinity
+    for(let num of arr){
+        if(num > firstMax){
+            secondMax = firstMax
+            firstMax = num
+        }else if(num > secondMax && num < firstMax){
+            secondMax = num
+        }
+    }
+    return {firstMax, secondMax}
+}
+console.log(findSecondLarestNumber(arr))
+```
