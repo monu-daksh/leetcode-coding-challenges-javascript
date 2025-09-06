@@ -912,3 +912,19 @@ function removeDuplicateArr(arr){
 }
 console.log(removeDuplicateArr(arr))
 ```
+## 📌 40. Remove Duplicate into string
+```javascript
+let str = "banana"
+// Output: "ban"
+
+function makeStrUnique(str){
+    // return [...new Set(str)].join("")    -> (1) solution
+    
+    let obj={}          
+    for(let char of str){
+        obj[char] = (str[char] || 0) +1
+    }
+    return Object.keys(obj).join("")
+}
+console.log(makeStrUnique(str))
+```
