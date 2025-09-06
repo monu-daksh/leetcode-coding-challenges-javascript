@@ -1010,3 +1010,36 @@ function findMissingNumber(arr){
 }
 console.log(findMissingNumber(arr))
 ```
+## 📌 43. Convert Array of Objects to Object by ID
+```javascript
+let arr =[
+  { id: 1, name: "Monu" },
+  { id: 2, name: "Daksh" }
+]
+
+// output {
+//   1: { id: 1, name: "Monu" },
+//   2: { id: 2, name: "Daksh" }
+// }
+
+function groupObjectOfArr(arr){
+    // let result = {}   ---> 1. solution
+    // for(let item of arr){
+    //     if(!result[item.id]){
+    //         result[item.id] =[]
+    //     }
+    //     result[item.id].push(item)
+    // }
+    // return result
+
+    
+    return arr.reduce((acc, item)=>{
+        if(!acc[item.id]){
+            acc[item.id] = []
+        }
+        acc[item.id].push(item)
+        return acc
+    }, {})
+}
+console.log(groupObjectOfArr(arr))
+```
