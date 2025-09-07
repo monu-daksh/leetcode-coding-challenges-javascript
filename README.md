@@ -1069,4 +1069,34 @@ function stringCompress(str) {
     // Return compressed only if smaller
     return result.length < str.length ? result : str;
 }
+console.log(stringCompress(str)
 ```
+## 📌 46. Valid Parentheses
+```javascript
+let  s = "({[]})"
+// output: true
+
+
+function isValidParentheses(s){
+    let obj = {
+        "{":"}",
+        "(":")",
+        "[":"]"
+    }
+    
+    let parenthesArr = []
+    for(let parenthes of s){
+        if(obj[parenthes]){
+            parenthesArr.push(parenthes)
+        }else{
+            let lastParenthes = parenthesArr.pop()
+            if(obj[lastParenthes] !== parenthes){
+                return false
+            }
+        }
+    }
+    return parenthesArr.length ===0
+}
+console.log(isValidParentheses(s))
+```
+
