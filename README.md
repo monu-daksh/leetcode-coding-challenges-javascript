@@ -1138,5 +1138,24 @@ function groupAnagram(arr){
 }
 console.log(groupAnagram(strs))
 ```
+## 📌 49. Find All Substrings of a String
+```javascript
+let s = "abc"
+// Expected Output:
+// ["a","b","c","ab","bc","abc"]
+
+function findAllSubstrings(s){
+    let result = []
+    for(let i=0; i < s.length; i++){
+        let substr = ""
+        for(let j=i; j < s.length; j++){
+            substr += s[j]
+            result.push(substr)
+        }
+    }
+    return result.sort((a, b) => a.length -b.length)  
+}
+console.log(findAllSubstrings(s))
+```
 
 
