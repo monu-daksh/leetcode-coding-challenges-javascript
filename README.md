@@ -778,7 +778,7 @@ function csvToArrObj(input){
     let values = input.split("\n").slice(1)
     
     for(let value of values){
-        let splitValue = value.split(",")
+        let splitValue = value.split(",")isPalindrom
         let obj = {}
         
         for(let i = 0; i < splitValue.length; i++){
@@ -1010,7 +1010,7 @@ function findMissingNumber(arr){
 }
 console.log(findMissingNumber(arr))
 ```
-## 📌 43. Convert Array of Objects to Object by ID
+## 📌 44. Convert Array of Objects to Object by ID
 ```javascript
 let arr =[
   { id: 1, name: "Monu" },
@@ -1042,4 +1042,31 @@ function groupObjectOfArr(arr){
     }, {})
 }
 console.log(groupObjectOfArr(arr))
+```
+## 📌 45. String Compression
+```javascript
+let str = aabcccccaaa
+let str = abc
+
+// output "a2b1c5a3"
+// output  "abc"
+
+function stringCompress(str) {
+    let count = 1;
+    let result = "";
+
+    for (let i = 1; i < str.length; i++) {
+        if (str[i] === str[i - 1]) {
+            count++;
+        } else {
+            result += str[i - 1] + count;
+            count = 1;
+        }
+    }
+    // Add last char
+    result += str[str.length - 1] + count;
+
+    // Return compressed only if smaller
+    return result.length < str.length ? result : str;
+}
 ```
