@@ -1099,4 +1099,23 @@ function isValidParentheses(s){
 }
 console.log(isValidParentheses(s))
 ```
+## 📌 46. Remove All Adjacent Duplicates
+```javascript
+let s = "abbaca"
+// Expected Output:
+// "ca"
+
+function removeAdjacentEl(s){
+    let stack = []
+    for(let char of s){
+        if(stack.length && stack[stack.length -1] === char){
+            stack.pop()
+        }else{
+            stack.push(char)
+        }
+    }
+    return stack
+}
+console.log(removeAdjacentEl(s))
+```
 
