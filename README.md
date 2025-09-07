@@ -1099,7 +1099,7 @@ function isValidParentheses(s){
 }
 console.log(isValidParentheses(s))
 ```
-## 📌 46. Remove All Adjacent Duplicates
+## 📌 47. Remove All Adjacent Duplicates
 ```javascript
 let s = "abbaca"
 // Expected Output:
@@ -1118,4 +1118,25 @@ function removeAdjacentEl(s){
 }
 console.log(removeAdjacentEl(s))
 ```
+## 📌 48. Group Anagrams
+```javascript
+let strs = ["eat","tea","tan","ate","nat","bat"]
+
+// Expected Output:
+// [["eat","tea","ate"],["tan","nat"],["bat"]]
+
+function groupAnagram(arr){
+    let obj = arr.reduce((acc, item) =>{
+        let sortedWord = item.split("").sort().join("")
+        if(!acc[sortedWord]){
+            acc[sortedWord] = []
+        }
+        acc[sortedWord].push(item)
+        return acc
+    },{})
+    return Object.values(obj)
+}
+console.log(groupAnagram(strs))
+```
+
 
