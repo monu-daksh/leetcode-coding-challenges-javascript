@@ -1175,9 +1175,22 @@ function deepClone(obj){
             copy[key] = obj[key]
         }
     }
+
     return copy
 }
 console.log(deepClone(obj))
 ```
+## 📌 51. Remove Null or Undefined Keys
+```javascript
+function removeNullUndefined(obj) {
+  return Object.keys(obj).reduce((acc, key) => {
+    if (obj[key] !== null && obj[key] !== undefined) {
+      acc[key] = obj[key];
+    }
+    return acc;
+  }, {});
+}
+```
+
 
 
