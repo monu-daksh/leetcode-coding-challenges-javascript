@@ -1214,7 +1214,7 @@ function deepCompare(obj1, obj2) {
 }
 console.log(deepCompare(obj1, obj2))
 ```
-## 📌 51. Find Max Value in Object
+## 📌 52. Find Max Value in Object
 ``` javascript
 const scores = { Monu: 85, Daksh: 92, Rahul: 78 };
 // output : { name: 'Daksh', score: 92 }
@@ -1231,6 +1231,29 @@ function findMaxScore(obj) {
   return { name, score };
 }
 console.log(findMaxScore(scores));
+```
+## 📌 53. Convert Object to Query String
+```javascript
+const obj = { name: "Monu", age: 26, city: "Delhi" };
+//"name=Monu&age=26&city=Delhi"
+
+function queryString(obj){
+    //  return Object.keys(obj).map((key) => `${key}=${obj[key]}`).join("&")
+    
+    let result= ''
+    let objLength = Object.keys(obj).length
+    let i = 0
+    
+    for(let key in obj){
+         result += `${key}=${obj[key]}`
+         if(i < objLength -1){
+             result += "&"
+         }
+         i++
+    }
+    return result    
+}
+console.log(queryString(obj))
 ```
 
 
