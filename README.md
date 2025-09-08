@@ -1157,5 +1157,27 @@ function findAllSubstrings(s){
 }
 console.log(findAllSubstrings(s))
 ```
+## 📌 50. Deep Clone Without Reference
+```javascript
+const obj = { name: "Monu", address: { city: "Delhi" } };
+
+function deepClone(obj){
+    // return structuredClone(obj)
+    
+    if(typeof obj !== "object" || obj === null){
+        return obj
+    }
+    let copy = Array.isArray(obj) ? [] : {}
+    for(let key in obj){
+        if(typeof obj[key] === "object" && obj[key] !== null){
+            copy[key] =  deepClone(obj[key])
+        }else{
+            copy[key] = obj[key]
+        }
+    }
+    return copy
+}
+console.log(deepClone(obj))
+```
 
 
