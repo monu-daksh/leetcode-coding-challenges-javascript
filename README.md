@@ -1191,7 +1191,7 @@ function removeNullUndefined(obj) {
   }, {});
 }
 ```
-## 📌 51. Remove Null or Undefined Keys
+## 📌 51. Compare deep object
 ```javascript
 const obj1 = { a: 1, b: { c: 2 } };
 const obj2 = { a: 1, b: { c: 2 } }
@@ -1214,6 +1214,25 @@ function deepCompare(obj1, obj2) {
 }
 console.log(deepCompare(obj1, obj2))
 ```
+## 📌 51. Find Max Value in Object
+``` javascript
+const scores = { Monu: 85, Daksh: 92, Rahul: 78 };
+// output : { name: 'Daksh', score: 92 }
+
+function findMaxScore(obj) {
+  let score = -Infinity;
+  let name = "";
+  for (let key in obj) {
+    if (obj[key] > score) {
+      score = obj[key];  
+      name = key;       
+    }
+  }
+  return { name, score };
+}
+console.log(findMaxScore(scores));
+```
+
 
 
 
