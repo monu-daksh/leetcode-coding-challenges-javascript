@@ -1191,6 +1191,29 @@ function removeNullUndefined(obj) {
   }, {});
 }
 ```
+## 📌 51. Remove Null or Undefined Keys
+```javascript
+const obj1 = { a: 1, b: { c: 2 } };
+const obj2 = { a: 1, b: { c: 2 } }
+
+function deepCompare(obj1, obj2) {
+  // base case: primitive values
+  if (obj1 === obj2) return true;
+  
+  // check null or non-object
+  if (typeof obj1 !== "object" || typeof obj2 !== "object" || obj1 === null || obj2 === null) {
+    return false;
+  }
+  if (Object.keys(obj1).length !== Object.keys(obj2).length) return false;
+  for (let key in obj1) {
+    if (!deepCompare(obj1[key], obj2[key])) {
+      return false;
+    }
+  }
+  return true;
+}
+console.log(deepCompare(obj1, obj2))
+```
 
 
 
