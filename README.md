@@ -1342,7 +1342,24 @@ use for ... in loop and you will see ("c", "a")
 
 Object.keys(child) → only ["a"].
 console.log(Object.getPrototypeOf(child));  only ["c"]  inherited
+```
+## 📌 57. Unique Objects in Array
+```javascript
+let arr =[{id: 1, name: "A"}, {id: 2, name: "B"}, {id: 1, name: "C"}]
 
+// output :[{id: 1, name: "A"}, {id: 2, name: "B"}]
+
+function findUniqueObj(arr){
+    let map = new Map()
+    
+    for(let obj of arr){
+        if(!map.has(obj.id)){
+            map.set(obj.id, obj)
+        }
+    }
+    return Array.from(map.values(map))
+}
+console.log(findUniqueObj(arr))
 ```
 
 
