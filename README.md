@@ -1255,7 +1255,7 @@ function queryString(obj){
 }
 console.log(queryString(obj))
 ```
-## 📌 53. Map vs WeakMap in JavaScript (garbage collection)
+## 📌 54. Map vs WeakMap in JavaScript (garbage collection)
 ```javascript
 // =======================================
 // Example: Map vs WeakMap in JavaScript
@@ -1294,6 +1294,11 @@ console.log("WeakMap dont have key now",  weakMap.has(obj2)) // false
 
 // You CANNOT iterate keys of a WeakMap, so no weakMap.keys() like Map.
 // If garbage collector runs, the entry will be removed automatically.
+```
+## 📌 54. JavaScript type coercion / truthy-falsy values
+```javascript
+console.log(!!"false" == !!"true");    // true
+console.log("false" == "true");       // false
 ```
 
 
