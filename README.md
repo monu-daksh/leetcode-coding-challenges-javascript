@@ -1255,6 +1255,46 @@ function queryString(obj){
 }
 console.log(queryString(obj))
 ```
+## 📌 53. Map vs WeakMap in JavaScript (garbage collection)
+```javascript
+// =======================================
+// Example: Map vs WeakMap in JavaScript
+// =======================================
+
+// --- Using Map ---
+let obj1 = { name: "Monu" };
+const map = new Map();
+
+// Setting an object as a key in Map
+map.set(obj1, "I am stored in Map");
+
+// Now we remove the reference from variable
+obj1 = null;
+
+// Object is still accessible because Map holds a strong reference
+console.log("Map key still exists:", map.keys().next().value); 
+// Output: { name: "Monu" }
+// Explanation: Map prevents garbage collection as long as the key exists inside it.
+
+// --- Using WeakMap ---
+let obj2 = { name: "Daksh" };
+const weakMap = new WeakMap();
+
+// Setting an object as a key in WeakMap
+weakMap.set(obj2, "I am stored in WeakMap");
+
+// Remove the reference from variable
+obj2 = null;
+
+
+console.log("WeakMap dont have key now",  weakMap.has(obj2)) // false
+
+// In WeakMap, the key becomes eligible for garbage collection
+// Because WeakMap only holds a *weak reference* to the object
+
+// You CANNOT iterate keys of a WeakMap, so no weakMap.keys() like Map.
+// If garbage collector runs, the entry will be removed automatically.
+```
 
 
 
