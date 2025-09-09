@@ -1299,15 +1299,49 @@ console.log("WeakMap dont have key now",  weakMap.has(obj2)) // false
 ```javascript
 
 !!"something" → convert values into boolean.
+
 Non-empty string = true.
 thats why !!"false" == !!"true" → true,
 
 but "false" == "true" → false.
+
 console.log(!!"false" == !!"true");    // true
 console.log("false" == "true");       // false
 
 // ![]  --> this will be treated like truthy value with have ! at starting
 console.log([] == ![]);               // true
+```
+## 📌 56. Enumerable key + inherited keys + non-enumerable key + hidden key
+```javascript
+let obj = { a: 1, b: 2 };
+
+for (let key in obj) {
+  console.log(key);   // for...in = enumerable + inherited keys
+}
+
+console.log(Object.keys(obj));              // enumerable own properties
+console.log(Object.getOwnPropertyNames(obj)); // all own properties (enumerable + non-enumerable +  hidden)
+
+
+All own properties (enumerable + non-enumerable / hidden)
+Object.defineProperty(obj, "hiddenProp", {
+  value: 42,
+  enumerable: false
+});
+
+console.log(Object.getOwnPropertyNames(obj));
+
+
+Inherited properties
+let parent = { c: 3 };
+let child = Object.create(parent);
+child.a = 1;      // adding a in child
+
+
+use for ... in loop and you will see ("c", "a")
+
+Object.keys(child) → only ["a"].
+console.log(Object.getPrototypeOf(child));  only ["c"]  inherited
 
 ```
 
