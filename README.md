@@ -1295,10 +1295,20 @@ console.log("WeakMap dont have key now",  weakMap.has(obj2)) // false
 // You CANNOT iterate keys of a WeakMap, so no weakMap.keys() like Map.
 // If garbage collector runs, the entry will be removed automatically.
 ```
-## 📌 54. JavaScript type coercion / truthy-falsy values
+## 📌 55. JavaScript type coercion / truthy-falsy values
 ```javascript
+
+!!"something" → convert values into boolean.
+Non-empty string = true.
+thats why !!"false" == !!"true" → true,
+
+but "false" == "true" → false.
 console.log(!!"false" == !!"true");    // true
 console.log("false" == "true");       // false
+
+// ![]  --> this will be treated like truthy value with have ! at starting
+console.log([] == ![]);               // true
+
 ```
 
 
