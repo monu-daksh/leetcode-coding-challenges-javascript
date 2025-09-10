@@ -1377,7 +1377,7 @@ console.log(a, b)  // 20, 10
 [a, b] = [b, a]
 console.log(a, b)// 20, 10
 ```
-## 📌 57. Function vs Block Scope with var
+## 📌 58. Function vs Block Scope with var
 ```javascript
 function test() {
   console.log(a);
@@ -1399,6 +1399,35 @@ function test() {
   }
   console.log(a);  // 10 assign here now
 }
+
+```
+## 📌 59. Shadowing Inside Function
+```javascript
+
+var name = "Global";
+function printName() {
+  console.log("1:", name);
+  var name = "Local";
+  console.log("2:", name);
+}
+printName();
+
+
+==== Explanation ====
+function printName() {
+  var name;  // declaration hoisted, value = undefined
+
+  console.log("1:", name); // at this point, it's undefined
+  name = "Local";          // assignment happens here
+  console.log("2:", name); // now it's "Local"
+}
+
+
+⚡ Reason
+var is function-scoped, not block-scoped.
+When var name is declared inside printName, it shadows the global name.
+Due to hoisting, the local name exists from the top of the function, but starts as undefined.
+That’s why you don’t see "Global" inside the function at all.
 
 ```
 
