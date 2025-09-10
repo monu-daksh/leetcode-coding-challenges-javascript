@@ -1377,6 +1377,30 @@ console.log(a, b)  // 20, 10
 [a, b] = [b, a]
 console.log(a, b)// 20, 10
 ```
+## 📌 57. Function vs Block Scope with var
+```javascript
+function test() {
+  console.log(a);
+  if (true) {
+    var a = 10;
+  }
+  console.log(a);
+}
+test();  // undefined, 10
+
+
+==== Explanation ====
+function test() {
+  var a; // hoisted to top (initialized as undefined)
+
+  console.log(a); // <-- a is declared, but not yet assigned
+  if (true) {
+    a = 10; // assignment happens here
+  }
+  console.log(a);  // 10 assign here now
+}
+
+```
 
 
 
