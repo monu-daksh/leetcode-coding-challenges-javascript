@@ -1361,6 +1361,22 @@ function findUniqueObj(arr){
 }
 console.log(findUniqueObj(arr))
 ```
+## 📌 57. Sweap Two numbers without using third variable
+```javascript
+let a = 10;
+let b = 20;
+
+// first Approach
+a = a +b
+b = a - b
+a = a - b
+console.log(a, b)  // 20, 10
+
+
+// Second Approach
+[a, b] = [b, a]
+console.log(a, b)// 20, 10
+```
 
 
 
