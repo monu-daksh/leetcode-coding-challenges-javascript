@@ -1489,6 +1489,34 @@ function plusOne(arr){
 }
 console.log(plusOne(arr))
 ```
+## 📌 63. Add Two Numbers in Array Form
+```javascript
+let num1 = [2, 7, 4], num2 = [5, 6, 4]
+// Output : [8, 3, 8]
+
+function sumOfArr(arr1, arr2){
+    let result = []
+    let carry = 0
+    
+    let i = arr1.length -1
+    let j = arr2.length -1
+    
+    while(i >=0 || j >=0 || carry > 0){
+        let x =  i >=0 ?  arr1[i]  :0
+        let y = j >=0 ? arr2[j] : 0
+        
+        let sum = x + y + carry
+        result.unshift(sum % 10)
+        carry = Math.floor(sum / 10)
+        i--
+        j--
+    }
+    return result
+}
+console.log(sumOfArr(num1, num2))
+
+```
+
 
 
 
