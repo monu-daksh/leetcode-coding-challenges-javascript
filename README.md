@@ -1430,7 +1430,7 @@ Due to hoisting, the local name exists from the top of the function, but starts 
 That’s why you don’t see "Global" inside the function at all.
 
 ```
-## 📌 59. Check Palindrome Number in Array Form(Two pointer)
+## 📌 60. Check Palindrome Number in Array Form(Two pointer)
 ```javascript
 let digits = [1, 2, 3, 2, 1]
 // Output: true
@@ -1448,6 +1448,27 @@ function checkPlaindrom(arr){
     return true
 }
 console.log(checkPlaindrom(digits))
+```
+## 📌 61. Subtract One from Array Number
+```javascript
+let digits = [1, 0, 0]
+// Output: [9, 9]
+
+function subtractOne(digits){
+    for(let i = digits.length -1; i >= 0; i--){
+        if(digits[i] >0){  // digits greater then 0 , subtract
+            digits[i]--
+            break
+        }else{
+            digits[i] = 9  // if digit ===0 then replace this with 9
+        }
+    }
+    if(digits[0] === 0){
+        digits.shift()  // remove [ 0, 9, 9 ]  first zero
+    }
+   return digits
+}
+console.log(subtractOne(digits))
 ```
 
 
