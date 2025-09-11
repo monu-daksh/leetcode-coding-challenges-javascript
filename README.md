@@ -1460,7 +1460,7 @@ function subtractOne(digits){
             digits[i]--
             break
         }else{
-            digits[i] = 9  // if digit ===0 then replace this with 9
+            digits[i] = 9  // if current digit ===0 then replace this with 9
         }
     }
     if(digits[0] === 0){
@@ -1469,6 +1469,25 @@ function subtractOne(digits){
    return digits
 }
 console.log(subtractOne(digits))
+```
+## 📌 62. Plus One
+```javascript
+let arr =[9, 9]
+// output [1, 0, 0]
+
+function plusOne(arr){
+    for(let i = arr.length-1; i >=0; i--){
+        if(arr[i] < 9){
+            arr[i] += 1
+            return arr
+        }else{
+            arr[i] = 0
+        }
+    }
+    arr.unshift(1)
+    return arr
+}
+console.log(plusOne(arr))
 ```
 
 
