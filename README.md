@@ -1514,7 +1514,30 @@ function sumOfArr(arr1, arr2){
     return result
 }
 console.log(sumOfArr(num1, num2))
+```
+## 📌 64. Subarray with Given Sum
+```javascript
 
+let nums = [1, 4, 20, 3, 10, 5], target = 33
+  // [20,3,10]
+
+function findSunArr(arr, target){
+    let left = 0   // slow pointer
+    let currentSum = 0
+    
+    for(let right=0; right < arr.length; right++){
+        currentSum += arr[right]
+        while(currentSum > target && left <= right){
+            currentSum -= arr[left]
+            left++
+        }
+        if(currentSum === target){
+            return {found:true, result:arr.slice(left, right+1)}
+        }
+    }
+    return {found:false, result:[]}
+}
+console.log(findSunArr(nums, target))
 ```
 
 
