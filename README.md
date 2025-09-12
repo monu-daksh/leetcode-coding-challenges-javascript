@@ -1579,6 +1579,32 @@ function duplicate(arr){
 }
 console.log(duplicate(arr))
 ```
+## 📌 67. find a string is valid
+```javascript
+let str = "A man, a plan, a canal: Panama"  
+// Output: true
+
+function isPalindrom(str){
+    let validStr = ""
+    for(let char of str){
+        if((char >= "a" && char <= "z") || (char >= "A"&& char <= "Z")){
+            validStr += char.toLowerCase()
+        }
+    }
+    
+    let left =0;
+    let right = validStr.length -1
+    while(left < right){
+        if(validStr[left] !== validStr[right]){
+            return false
+        }
+        left++
+        right--
+    }
+    return true
+}
+console.log(isPalindrom(str))
+```
 
 
 
