@@ -1557,7 +1557,28 @@ function findMajorityElement(arr){
 }
 console.log(findMajorityElement(arr))
 ```
+## 📌 66. Find duplicate values
+```javascript
 
+let arr = [4,3,2,7,8,2,3,1]
+// Output: [2,3]
+
+function duplicate(arr){
+    let result = []
+    let obj = {}
+    
+    for(let num of arr){
+        obj[num] = (obj[num] || 0) +1
+    }
+    for(let key in obj){
+        if(obj[key]  >= 2){
+            result.push(+key)
+        }
+    }
+    return result
+}
+console.log(duplicate(arr))
+```
 
 
 
