@@ -1539,6 +1539,24 @@ function findSunArr(arr, target){
 }
 console.log(findSunArr(nums, target))
 ```
+## 📌 65. Majority Element (> n/2 times)
+```javascript
+let arr = [2,2,1,1,1,2,2]
+// Output: 2
+
+function findMajorityElement(arr){
+    let obj = {}
+    for(let num of arr){
+        obj[num] = (obj[num] || 0) +1
+        
+        if(obj[num] > arr.length / 2){
+            return num
+        }
+    }
+    return null
+}
+console.log(findMajorityElement(arr))
+```
 
 
 
