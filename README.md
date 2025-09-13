@@ -1605,6 +1605,25 @@ function isPalindrom(str){
 }
 console.log(isPalindrom(str))
 ```
+## 📌 68. Generate Range of Numbers
+```javascript
+let obj = { start: 5, end: 10 }
+// Output: [5, 6, 7, 8, 9, 10]
+
+function generateNumber(obj){
+    let {start, end} = obj
+
+    // let size = end -start+1
+    // return Array.from({length:size}, (_, index) => start+index)
+    
+      let result = []
+      for(let i = start; i <= end; i++){
+          result.push(i)
+      }
+     return result
+}
+console.log(generateNumber(obj))
+```
 
 
 
