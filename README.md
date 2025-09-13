@@ -1647,7 +1647,23 @@ function deepKey(obj){
     return deepestKey
 }
 console.log(deepKey(obj))
+```
+## 📌 70. Group Words by Their Length
+```javascript
+let arr =["cat", "dog", "elephant", "lion", "tiger"]
+// Output: {3: ["cat", "dog"], 8: ["elephant"], 4: ["lion"], 5: ["tiger"]}
 
+function groupWordByLength(arr){
+    return arr.reduce((acc, word)=>{
+        let wordLength = word.length
+        if(!acc[wordLength]){
+            acc[wordLength] = []
+        }
+        acc[wordLength].push(word)
+        return acc
+    },{})    
+}
+console.log(groupWordByLength(arr))
 ```
 
 
