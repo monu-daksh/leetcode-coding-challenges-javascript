@@ -1665,6 +1665,42 @@ function groupWordByLength(arr){
 }
 console.log(groupWordByLength(arr))
 ```
+## 📌 71. Find All Distinct Palindromic Substrings
+```javascript
+let str ="abaaa"
+// Output: ["a", "aa", "aaa", "aba", "b"]
+
+
+function findAllPalinfromSubStr(str){
+    
+    function isPalindrom(substr){
+        let left = 0
+        let right = substr.length -1
+        while(left < right){
+            if(substr[left] !== substr[right]){
+                return false
+            }
+            left++
+            right--
+        }
+        return true
+    }
+    
+    
+    let result = new Set()
+   for (let i = 0; i < str.length; i++) {
+        for (let j = i; j < str.length; j++) {
+            let subStr = str.slice(i, j + 1);
+            if (isPalindrom(subStr)) {
+                result.add(subStr);
+            }
+        }
+    }
+    return [...result] 
+}
+console.log(findAllPalinfromSubStr(str))
+
+```
 
 
 
