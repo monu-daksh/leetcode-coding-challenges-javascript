@@ -1624,6 +1624,31 @@ function generateNumber(obj){
 }
 console.log(generateNumber(obj))
 ```
+## 📌 69. Find the Deepest Key in a Nested Object
+```javascript
+let obj = {a: 1, b: {c: 2, d: {e: 3}}}
+// Output: "e"
+
+
+function deepKey(obj){
+    
+    let stack = [{node:obj, key:null}]
+    let deepestKey = null;
+    while(stack.length){
+        const {node, key} = stack.pop()
+        for(let k in node){
+            if(typeof node[k] === "object" && node[k]){
+                stack.push({node:node[k], key:k})
+            }else{
+                deepestKey = k
+            }
+        }
+    }
+    return deepestKey
+}
+console.log(deepKey(obj))
+
+```
 
 
 
