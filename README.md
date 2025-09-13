@@ -1699,7 +1699,16 @@ function findAllPalinfromSubStr(str){
     return [...result] 
 }
 console.log(findAllPalinfromSubStr(str))
+```
+## 📌 72. Nested Promises
+```javascript
+Note: if there is resolved promise inside then, so it will replace first resolved promise value
 
+Promise.resolve("first")
+  .then(res => {
+    return Promise.resolve("second");
+  })
+  .then(res => console.log(res)); // second
 ```
 
 
