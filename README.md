@@ -1710,6 +1710,30 @@ Promise.resolve("first")
   })
   .then(res => console.log(res)); // second
 ```
+## 📌 73. Find Subarray with Given Sum
+```javascript
+let arr = [1, 2, 3, 7, 5];
+let target = 12;
+// Output: [2,3,7]
+
+function findSubArr(arr, target){
+    let left =0
+    let sum = 0
+    
+    for(let right =0; right < arr.length; right++){
+         sum += arr[right]
+         while(sum > target && left <= right){
+             sum -= arr[left]
+             left++
+         }
+         if(sum === target){
+             return arr.slice(left, right+1)
+         }
+    }
+    return []
+}
+console.log(findSubArr(arr, target))
+```
 
 
 
