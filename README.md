@@ -1734,6 +1734,28 @@ function findSubArr(arr, target){
 }
 console.log(findSubArr(arr, target))
 ```
+## 📌 74. Rearrange Array Alternating Positive & Negative
+```javascript
+
+let arr =[1, 2, -3, -4, -5, 6, -7]
+// Output: [1, -3, 2, -4, 6, -5, -7]
+
+function rearrange(arr){
+    let pos = arr.filter((num)=> num > 0)
+    let negs = arr.filter((num) => num < 0)
+    let result = []
+    
+    let i = 0
+    let j = 0
+
+    while(i < pos.length && j < negs.length ){
+          if(i < pos.length) result.push(pos[i++])
+          if(j < negs.length) result.push(negs[j++])
+    }
+    return result
+}
+console.log(rearrange(arr))
+```
 
 
 
