@@ -1819,6 +1819,21 @@ function smallestSubArrayWithTargetSum(arr, target){
 }
 console.log(smallestSubArrayWithTargetSum(arr, target))
 ```
+## 📌 77. Hoisting 
+```javascript
+When Js run/execute it goes through with two steps
+1. Memory creation phase (place where we have hosting there)
+2. Code execution phase
+
+console.log(name)   // undefined
+var name = "Dev"  
+
+console.log(getName)    // dev
+function getName(){  
+ return "Dev"  
+}
+
+```
 
 
 
