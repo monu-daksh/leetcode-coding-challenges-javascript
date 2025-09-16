@@ -1860,7 +1860,18 @@ let obj = new Person();  // ❌ ReferenceError
 class Person {}
 
 Note: Classes never hoist
+```
+## 📌 80. Hoisting
+```javascript
+var x = 5;
+var x;
+console.log(x);
 
+Note:-
+
+var x;   // declared (initialized with undefined by default)
+x = 5;   // then assigned
+var x;   // ignored, because it's already declared
 ```
 
 
