@@ -1832,7 +1832,26 @@ console.log(getName)    // dev
 function getName(){  
  return "Dev"  
 }
+```
+## 📌 77. Function inside block scope
+```javascript
 
+'use strict';
+if (true) {
+  function test() {
+    console.log("inside");
+  }
+}
+test(); // ❌ ReferenceError
+
+
+
+if (true) {
+  function test() {
+    console.log("inside");
+  }
+}
+test();  // inside
 ```
 
 
