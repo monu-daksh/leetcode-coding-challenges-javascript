@@ -1756,6 +1756,40 @@ function rearrange(arr){
 }
 console.log(rearrange(arr))
 ```
+## 📌 75. Maximum Sum Subarray (Kadane’s Algorithm)
+```javascript
+
+let arr = [-2,1,-3,4,-1,2,1,-5,4]
+//{ maxSum: 6, subArray: [4, -1, 2, 1] }
+
+function findMaxSubArray(arr){
+    let maxSum = arr[0]
+    let currentSum = arr[0]
+    
+    let start =0
+    let end = 0
+    let tempStart = 0
+    
+    for(let i=1; i < arr.length; i++){
+        if(arr[i] > currentSum + arr[i]){
+            currentSum = arr[i]
+            tempStart = i
+        }else{ 
+            currentSum += arr[i]
+        }
+        if(currentSum > maxSum){
+            maxSum = currentSum
+            start = tempStart
+            end = i
+        }
+    }
+    return {
+        maxSum,
+        subArr: arr.slice(start, end+1)
+    }
+}
+console.log(findMaxSubArray(arr))
+```
 
 
 
