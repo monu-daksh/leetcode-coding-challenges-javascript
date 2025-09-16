@@ -1790,6 +1790,35 @@ function findMaxSubArray(arr){
 }
 console.log(findMaxSubArray(arr))
 ```
+## 📌 76. Smallest Subarray with Sum ≥ Target
+```javascript
+let arr = [2,3,1,2,4,3], target = 7
+
+// Output: 2 ([4,3])
+function smallestSubArrayWithTargetSum(arr, target){
+    let minLength = Infinity
+    let currentSum = 0
+    let result = []
+    let left = 0
+    
+    for(let right =0; right < arr.length; right++){
+         currentSum += arr[right]
+         while(currentSum >= target){
+             if(right - left + 1 < minLength){
+                 minLength = right - left +1
+                 result = arr.slice(left, right+1)
+             }
+             currentSum -= arr[left]
+             left++
+         }
+    }
+    return{
+        minLength,
+        result
+    }
+}
+console.log(smallestSubArrayWithTargetSum(arr, target))
+```
 
 
 
