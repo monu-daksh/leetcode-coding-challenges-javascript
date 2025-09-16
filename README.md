@@ -1833,7 +1833,7 @@ function getName(){
  return "Dev"  
 }
 ```
-## 📌 77. Function inside block scope
+## 📌 78. Function inside block scope
 ```javascript
 
 'use strict';
@@ -1852,6 +1852,15 @@ if (true) {
   }
 }
 test();  // inside
+```
+## 📌 79. Class hoisting
+```javascript
+
+let obj = new Person();  // ❌ ReferenceError
+class Person {}
+
+Note: Classes never hoist
+
 ```
 
 
