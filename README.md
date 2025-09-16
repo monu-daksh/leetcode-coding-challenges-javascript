@@ -1873,6 +1873,30 @@ var x;   // declared (initialized with undefined by default)
 x = 5;   // then assigned
 var x;   // ignored, because it's already declared
 ```
+## 📌 80. var hoisting conflict
+```javascript
+foo();
+var foo = function() {
+  console.log("var func");
+};
+function foo() {
+  console.log("declaration func");
+}
+foo();
+
+output:-
+declaration func
+var func
+
+📌 Important Notes:
+
+
+Function declarations are hoisted with their full body.
+var declarations are hoisted but only with undefined.
+If both functions are with same → function declaration wins initially, but later reassignment by var will overwrite it.
+
+
+```
 
 
 
