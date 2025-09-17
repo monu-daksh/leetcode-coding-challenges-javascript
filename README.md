@@ -1925,6 +1925,54 @@ console.log(+[1,2,3]);
 // +"1,2,3" → Number("1,2,3")
 // → NaN (not a valid number)
 ```
+## 📌 82. ** Array to number**
+```javascript
+// Case 1: []
+console.log([] == 0);
+// [] is object → ToPrimitive → [].toString()
+// [].toString() → "" (empty string)
+// "" == 0 → Number("") == 0
+// 0 == 0 → true
+
+
+// Case 2: [null]
+console.log([null] == 0);
+// [null] is object → ToPrimitive → [null].toString()
+// [null].toString() → ""   (null is empty string in array join)
+// "" == 0 → Number("") == 0
+// 0 == 0 → true
+
+
+// Case 3: [undefined]
+console.log([undefined] == 0);
+// [undefined] is object → ToPrimitive → [undefined].toString()
+// [undefined].toString() → ""   (undefined is empty string in array join)
+// "" == 0 → Number("") == 0
+// 0 == 0 → true
+
+
+// Case 4: [1]
+console.log([1] == 1);
+// [1] is object → ToPrimitive → [1].toString()
+// [1].toString() → "1"
+// "1" == 1 → Number("1") == 1
+// 1 == 1 → true
+
+
+// Case 5: [1,2]
+console.log([1,2] == "1,2");
+// [1,2] is object → ToPrimitive → [1,2].toString()
+// [1,2].toString() → "1,2"
+// "1,2" == "1,2" → true
+
+
+// Case 6: [[]]
+console.log([[]] == 0);
+// [[]] → ToPrimitive → [[]].toString()
+// [[]].toString() → ""  (inner [] → "")
+// "" == 0 → Number("") == 0
+// 0 == 0 → true
+```
 
 
 
