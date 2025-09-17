@@ -1894,8 +1894,16 @@ var func
 Function declarations are hoisted with their full body.
 var declarations are hoisted but only with undefined.
 If both functions are with same → function declaration wins initially, but later reassignment by var will overwrite it.
+```
+## 📌 81. Conversion rule (ECMAScript spec)
+```javascript
+
+console.log(+"");   // Number("") --> 0
+console.log(+null); // Number(null)  --> 0
+console.log(+undefined); // Number(undefined)  
 
 
+// + use Number(...) for conversion
 ```
 
 
