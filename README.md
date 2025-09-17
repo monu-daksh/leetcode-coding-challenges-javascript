@@ -1925,9 +1925,9 @@ console.log(+[1,2,3]);
 // +"1,2,3" → Number("1,2,3")
 // → NaN (not a valid number)
 ```
-## 📌 82. ** Array to number**
+## 📌 82. Array to number
 ```javascript
-// Case 1: []
+**Case 1: []**
 console.log([] == 0);
 // [] is object → ToPrimitive → [].toString()
 // [].toString() → "" (empty string)
