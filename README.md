@@ -1905,6 +1905,26 @@ console.log(+undefined); // Number(undefined)
 
 // + use Number(...) for conversion
 ```
+## 📌 82. Array to number
+```javascript
+console.log(+[]);      
+// [] is object → primitive conversion
+// [].toString() → ""
+// +"" → Number("")
+// → 0
+
+
+console.log(+["5"]);  
+// ["5"].toString() → "5"
+// +"5" → Number("5")
+// → 5
+
+
+console.log(+[1,2,3]); 
+// [1,2,3].toString() → "1,2,3"
+// +"1,2,3" → Number("1,2,3")
+// → NaN (not a valid number)
+```
 
 
 
