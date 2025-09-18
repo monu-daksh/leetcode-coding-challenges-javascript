@@ -1984,6 +1984,33 @@ console.log(x);
 You cannot redeclare the same variable with var and let in the same scope.
 Since var x = 1; is already declared, writing let x = 2; causes a compile-time error.
 ```
+## 📌 84. Scoping
+```javascript
+
+"use strict" (new browser ES6+ modules default)
+try {
+  throw new Error();
+} catch (e) {
+  function hello() { return "hi"; }
+}
+console.log(typeof hello);   // undefined
+
+
+// no strict mode (old browser)
+try {
+  throw new Error();
+} catch (e) {
+  function hello() { return "hi"; }
+}
+console.log(typeof hello);   // function
+
+
+🔍 Reason:
+In strict mode (ES6+ modules default), function declarations inside a block (catch, if, for, etc.) are block-scoped.
+So function hello() exists only inside the catch block and is not accessible outside.
+
+When you do console.log(typeof hello), it checks in the outer/global scope, where hello is not defined → result is "undefined".
+```
 
 
 
