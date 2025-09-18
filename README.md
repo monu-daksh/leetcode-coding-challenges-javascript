@@ -1973,6 +1973,17 @@ console.log([[]] == 0);
 // "" == 0 → Number("") == 0
 // 0 == 0 → true
 ```
+## 📌 83. Scoping
+```javascript
+
+var x = 1;
+let x = 2;
+console.log(x);
+
+🔍 Reason:
+You cannot redeclare the same variable with var and let in the same scope.
+Since var x = 1; is already declared, writing let x = 2; causes a compile-time error.
+```
 
 
 
