@@ -2051,6 +2051,20 @@ The microtask queue never becomes empty.
 The event loop cannot move to the macrotask queue (where setTimeout lives) until the microtask queue is completely empty.
 Since the recursive promise keeps filling the microtask queue, "T" is starved forever.
 ```
+## 📌 86. Explicit Coercion Snippets (guess the output)
+```javascript
+console.log(String(null));         
+console.log(String(undefined));     
+console.log(String(Symbol("x")));   
+
+console.log(Boolean(null));         
+console.log(Boolean(undefined));     
+console.log(Boolean(Symbol("x")));   
+
+console.log(Number(null));         
+console.log(Number(undefined));     
+console.log(Number(Symbol("x")));  
+```
 
 
 
