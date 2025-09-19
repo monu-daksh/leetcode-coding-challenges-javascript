@@ -2011,6 +2011,46 @@ So function hello() exists only inside the catch block and is not accessible out
 
 When you do console.log(typeof hello), it checks in the outer/global scope, where hello is not defined → result is "undefined".
 ```
+## 📌 85. Event loop starvation trap (microtask starvation)
+```javascript
+setTimeout(() => console.log("T"), 0);
+
+Promise.resolve().then(function loop() {
+  console.log("P");
+  Promise.resolve().then(loop);
+});
+
+//output:
+P
+P
+P
+P
+... (infinite)
+
+
+//Global Execution
+
+setTimeout(..., 0) schedules a macrotask (in the Timer phase).
+
+Promise.resolve().then(loop) schedules a microtask.
+
+//Event Loop Rule
+Microtasks always run before moving to the next macrotask.
+So the event loop first executes loop().
+
+//Inside loop()
+Logs "P".
+Schedules another microtask loop (via Promise.resolve().then(loop)).
+
+//Infinite Recursion in Microtask Queue
+After one loop() finishes, another loop() is already waiting in the microtask queue.
+This cycle repeats endlessly.
+The microtask queue never becomes empty.
+
+//Why setTimeout("T") never executes
+The event loop cannot move to the macrotask queue (where setTimeout lives) until the microtask queue is completely empty.
+Since the recursive promise keeps filling the microtask queue, "T" is starved forever.
+```
 
 
 
