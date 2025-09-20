@@ -2064,6 +2064,50 @@ console.log(Boolean(Symbol("x")));
 console.log(Number(null));         
 console.log(Number(undefined));     
 console.log(Number(Symbol("x")));  
+
+
+// String conversion
+console.log(String(null));          // ?
+console.log(String(undefined));     // ?
+console.log(String(Symbol("x")));   // ?
+
+// Number conversion
+console.log(Number(""));            // ?
+console.log(Number("   "));         // ?
+console.log(Number("123abc"));      // ?
+console.log(Number(true));          // ?
+console.log(Number(false));         // ?
+console.log(Number(null));          // ?
+console.log(Number(undefined));     // ?
+
+// Boolean conversion
+console.log(Boolean("false"));      // ?
+console.log(Boolean(""));           // ?
+console.log(Boolean("0"));          // ?
+console.log(Boolean(0));            // ?
+console.log(Boolean([]));           // ?
+console.log(Boolean({}));           // ?
+
+// parseInt / parseFloat edge cases
+console.log(parseInt("08"));        // ?
+console.log(parseInt("0xF"));       // ?
+console.log(parseInt("Infinity"));  // ?
+console.log(parseFloat("123.45abc")); // ?
+
+// Weird coercion mix
+console.log(+true);                 // ?
+console.log(+false);                // ?
+console.log(+null);                 // ?
+console.log(+undefined);            // ?
+console.log(+"   ");                // ?
+
+// Explicit object → primitive coercion
+console.log(String([1,2,3]));       // ?
+console.log(Number([1,2,3]));       // ?
+console.log(Number([]));            // ?
+console.log(Number({}));            // ?
+console.log(Boolean([].toString())); // ?
+
 ```
 
 
