@@ -2108,6 +2108,47 @@ console.log(Number([]));            // ?
 console.log(Number({}));            // ?
 console.log(Boolean([].toString())); // ?
 
+
+// Empty arrays and strings
+console.log([] + []);           // ?
+console.log([] + {});           // ?
+console.log({} + []);           // ?
+console.log([1] + [1]);         // ?
+
+// Boolean + Number coercion
+console.log(true + true);       // ?
+console.log(true + false);      // ?
+console.log(false + false);     // ?
+console.log(!!"false" == true); // ?
+
+// null, undefined with +
+console.log(null + 1);          // ?
+console.log(undefined + 1);     // ?
+console.log(null == 0);         // ?
+console.log(undefined == null); // ?
+
+// String + Number coercion
+console.log("5" + 3);           // ?
+console.log("5" - 3);           // ?
+console.log("5" * "2");         // ?
+console.log("5" / "2");         // ?
+
+// Weird equality checks
+console.log([] == ![]);         // ?
+console.log("0" == false);      // ?
+console.log(0 == "");           // ?
+console.log(0 == []);           // ?
+console.log("0" == []);         // ?
+
+// Object / Array coercion with +
+console.log([] + null + 1);     // ?
+console.log([1,2] + [3,4]);     // ?
+console.log(+[]);               // ?
+console.log(+{});               // ?
+console.log(+[[]]);             // ?
+console.log(+[1,2,3]);          // ?
+
+
 ```
 
 
