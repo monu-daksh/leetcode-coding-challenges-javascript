@@ -2164,6 +2164,40 @@ function encrptEmail(email){
      return `${firstchar}${hiddin}${lastchar}${ "@" +  domain}`
 }
 console.log(encrptEmail(str))
+
+
+## 📌 88. 
+Implement a function storeData(obj) that stores objects in an array.
+If a new object has the same id, replace the old one with the latest.
+
+storeData({id: 1, name: 'Monu'})
+storeData({id: 2, name: 'Daksh'})
+storeData({id: 1, name: 'Updated Monu'})
+
+// Expected stored data:
+[
+  {id: 1, name: 'Updated Monu'},
+  {id: 2, name: 'Daksh'}
+]
+
+let store = [];
+
+function storeData(obj) {
+  const index = store.findIndex(item => item.id === obj.id);
+  if (index !== -1) {
+    // Replace old object
+    store[index] = obj;
+  } else {
+    // Add new object
+    store.push(obj);
+  }
+  return store;
+}
+
+// Test:
+console.log(storeData({ id: 1, name: "Monu" }));
+console.log(storeData({ id: 2, name: "Daksh" }));
+console.log(storeData({ id: 1, name: "Monu Updated" }));
 ```
 
 
