@@ -2148,7 +2148,22 @@ console.log(+{});               // ?
 console.log(+[[]]);             // ?
 console.log(+[1,2,3]);          // ?
 
+## 📌 87. Create a maskEmail function
+Input:
+"monu.daksh@gmail.com"
+Expected Output:
+"m*****h@gmail.com"
 
+function encrptEmail(email){
+     let [username, domain] = email.split("@")
+     
+     let firstchar = username[0]
+     let lastchar = username[username.length - 1]
+     
+     let hiddin = "*".repeat(username.length -2)
+     return `${firstchar}${hiddin}${lastchar}${ "@" +  domain}`
+}
+console.log(encrptEmail(str))
 ```
 
 
