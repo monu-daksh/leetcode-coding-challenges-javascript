@@ -2273,6 +2273,50 @@ console.log(trackLogin("monu")); // 3
 console.log(trackLogin("daksh")); // 2
 
 ```
+## 📌 91. Implement Retry Logic
+```javascript
+
+// retry(fn, n)
+// fn → async function that might fail
+// n  → number of retry attempts
+async function retry(fn, n) {
+  let lastError;
+
+  for (let i = 0; i < n; i++) {
+    try {
+      //  Try running the async function
+      return await fn();
+    } catch (err) {
+      //  If it fails, store the error and log retry info
+      lastError = err;
+      console.log(`Attempt ${i + 1} failed. Retrying...`);
+    }
+  }
+
+  //  All attempts failed → throw last error
+  throw lastError;
+}
+
+
+// Example: Simulated API that randomly fails
+async function unstableAPI() {
+  const success = Math.random() > 0.7; // 30% success chance
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (success) resolve(" Success!");
+      else reject(" Failed!");
+    }, 500);
+  });
+}
+
+// Try calling with retry logic
+retry(unstableAPI, 3)
+  .then(res => console.log("Result:", res))
+  .catch(err => console.error("Final Error:", err));
+
+
+
+```
 
 
 
