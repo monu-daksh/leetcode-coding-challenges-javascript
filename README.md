@@ -2151,6 +2151,7 @@ console.log(+[1,2,3]);          // ?
 ```
 
 ## 📌 87. Create a maskEmail function
+```javascript
 Input:
 "monu.daksh@gmail.com"
 Expected Output:
@@ -2173,6 +2174,7 @@ console.log(encrptEmail(str))
 ## 📌 88. 
 Implement a function storeData(obj) that stores objects in an array.
 If a new object has the same id, replace the old one with the latest.
+```javascript
 
 storeData({id: 1, name: 'Monu'})
 storeData({id: 2, name: 'Daksh'})
@@ -2205,6 +2207,7 @@ console.log(storeData({ id: 1, name: "Monu Updated" }));
 ```
 
 ## 📌 89. Create a Rate Limiter
+```javascript
 Implement a function rateLimiter(limit, time) that allows a user to call an API only limit times in time seconds.
 
 function rateLimiter(limit, time) {
@@ -2243,6 +2246,7 @@ limitedAPI(mockAPI); // blocked
 ```
 
 ## 📌 90. Track Login Attempts
+```javascript
 Write a function loginTracker(userId) that stores how many times a user logs in.
 Each call increases the count and returns the total.
 
