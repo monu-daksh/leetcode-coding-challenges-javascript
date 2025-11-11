@@ -2148,6 +2148,8 @@ console.log(+{});               // ?
 console.log(+[[]]);             // ?
 console.log(+[1,2,3]);          // ?
 
+```
+
 ## 📌 87. Create a maskEmail function
 Input:
 "monu.daksh@gmail.com"
@@ -2164,6 +2166,8 @@ function encrptEmail(email){
      return `${firstchar}${hiddin}${lastchar}${ "@" +  domain}`
 }
 console.log(encrptEmail(str))
+
+```
 
 
 ## 📌 88. 
@@ -2198,6 +2202,7 @@ function storeData(obj) {
 console.log(storeData({ id: 1, name: "Monu" }));
 console.log(storeData({ id: 2, name: "Daksh" }));
 console.log(storeData({ id: 1, name: "Monu Updated" }));
+```
 
 ## 📌 89. Create a Rate Limiter
 Implement a function rateLimiter(limit, time) that allows a user to call an API only limit times in time seconds.
@@ -2235,6 +2240,8 @@ limitedAPI(mockAPI);
 limitedAPI(mockAPI);
 limitedAPI(mockAPI); // blocked
 
+```
+
 ## 📌 90. Track Login Attempts
 Write a function loginTracker(userId) that stores how many times a user logs in.
 Each call increases the count and returns the total.
@@ -2260,7 +2267,6 @@ console.log(trackLogin("daksh")); // 1
 console.log(trackLogin("monu")); // 2
 console.log(trackLogin("monu")); // 3
 console.log(trackLogin("daksh")); // 2
-
 
 ```
 
