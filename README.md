@@ -2198,6 +2198,43 @@ function storeData(obj) {
 console.log(storeData({ id: 1, name: "Monu" }));
 console.log(storeData({ id: 2, name: "Daksh" }));
 console.log(storeData({ id: 1, name: "Monu Updated" }));
+
+## 📌 89. Create a Rate Limiter
+Implement a function rateLimiter(limit, time) that allows a user to call an API only limit times in time seconds.
+
+function rateLimiter(limit, time) {
+  let count = 0;
+  let isTimerRunning = false;
+
+  return function(apiCall) {
+    if (count < limit) {
+      count++;
+      apiCall();
+    } else {
+      console.log(" Too many requests. Please wait...");
+    }
+
+    if (!isTimerRunning) {
+      isTimerRunning = true;
+      setTimeout(() => {
+        count = 0;
+        isTimerRunning = false;
+      }, time * 1000);
+    }
+  };
+}
+
+// Example usage:
+const limitedAPI = rateLimiter(2, 3); // 2 calls allowed per 3 seconds
+
+function mockAPI() {
+  console.log(" API called at", new Date().toLocaleTimeString());
+}
+
+limitedAPI(mockAPI);
+limitedAPI(mockAPI);
+limitedAPI(mockAPI); // blocked
+
 ```
 
 
