@@ -2235,6 +2235,33 @@ limitedAPI(mockAPI);
 limitedAPI(mockAPI);
 limitedAPI(mockAPI); // blocked
 
+## 📌 90. Track Login Attempts
+Write a function loginTracker(userId) that stores how many times a user logs in.
+Each call increases the count and returns the total.
+
+function loginTracker() {
+  const userLogins = {};
+
+  return function(userId) {
+    if (!userLogins[userId]) {
+      userLogins[userId] = 0;
+    }
+
+    userLogins[userId]++;
+    return userLogins[userId];
+  };
+}
+
+// Example usage:
+const trackLogin = loginTracker();
+
+console.log(trackLogin("monu")); // 1
+console.log(trackLogin("daksh")); // 1
+console.log(trackLogin("monu")); // 2
+console.log(trackLogin("monu")); // 3
+console.log(trackLogin("daksh")); // 2
+
+
 ```
 
 
