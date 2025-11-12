@@ -2321,6 +2321,36 @@ retry(unstableAPI, 3)
 ## 📌 91. Implement Retry Logic
 ```javascript
 
+async function retry(fn, retries) {
+  for (let attempt = 1; attempt <= retries; attempt++) {
+    try {
+      // Try to execute the function
+      const result = await fn();
+      return result; //  Success, return result
+    } catch (err) {
+      console.log(`Attempt ${attempt} failed.`);
+      if (attempt === retries) {
+        throw err; //  Last attempt failed, throw error
+      }
+      // Otherwise, continue to next attempt
+    }
+  }
+}
+
+// Example async function that may fail randomly
+async function fetchData() {
+  if (Math.random() < 0.7) { // 70% chance to fail
+    throw new Error("Network error!");
+  }
+  return "Data fetched successfully!";
+}
+
+// Usage
+retry(fetchData, 3)
+  .then(res => console.log(res))
+  .catch(err => console.log("All attempts failed:", err.message));
+
+
 ```
 
 
