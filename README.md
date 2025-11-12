@@ -2352,7 +2352,25 @@ retry(fetchData, 3)
 
 
 ```
+## 📌 93. Countdown Timer
+```javascript
 
+
+function countdown(count){
+    let remaining = count
+    let intervalId = setInterval(()=>{
+        
+        if(remaining > 0){
+            console.log(`Time left: ${remaining} seconds`);
+            remaining--
+        }else{
+            console.log("Time's up!");
+            clearInterval(intervalId)
+        }
+    }, 1000)
+}
+countdown(10)
+```
 
 
 
