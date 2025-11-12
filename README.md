@@ -2354,8 +2354,6 @@ retry(fetchData, 3)
 ```
 ## 📌 93. Countdown Timer
 ```javascript
-
-
 function countdown(count){
     let remaining = count
     let intervalId = setInterval(()=>{
@@ -2370,6 +2368,21 @@ function countdown(count){
     }, 1000)
 }
 countdown(10)
+```
+## 📌 94. Delay Function Using Promise
+```javascript
+function delay(ms){
+    return new Promise((resolve)=> setTimeout(resolve, ms))
+}
+
+async function run(){
+    console.log("start")
+    await delay(2000)
+    console.log("Executed after 2 seconds!");
+}
+run()
+
+
 ```
 
 
