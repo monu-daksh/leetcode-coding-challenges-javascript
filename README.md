@@ -2381,7 +2381,10 @@ async function run(){
     console.log("Executed after 2 seconds!");
 }
 run()
+```
 
+## 📌 95. Delay Function Using Promise
+```javascript
 
 ```
 
