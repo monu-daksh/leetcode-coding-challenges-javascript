@@ -2208,40 +2208,44 @@ console.log(storeData({ id: 1, name: "Monu Updated" }));
 
 ## 📌 89. Create a Rate Limiter
 ```javascript
-Implement a function rateLimiter(limit, time) that allows a user to call an API only limit times in time seconds.
+Implement a function that limits how many times a function can be called per second.
 
-function rateLimiter(limit, time) {
-  let count = 0;
-  let isTimerRunning = false;
+function rateLimiter(fn, limit, interval) {
+  // Store timestamps of function calls
+  const calls = [];
 
-  return function(apiCall) {
-    if (count < limit) {
-      count++;
-      apiCall();
-    } else {
-      console.log(" Too many requests. Please wait...");
+  return function (...args) {
+    const now = Date.now();
+
+    // Remove timestamps older than interval
+    while (calls.length && now - calls[0] > interval) {
+      calls.shift();
     }
 
-    if (!isTimerRunning) {
-      isTimerRunning = true;
-      setTimeout(() => {
-        count = 0;
-        isTimerRunning = false;
-      }, time * 1000);
+    // Check if limit reached
+    if (calls.length < limit) {
+      calls.push(now); // record this call
+      fn(...args);     // execute function
+    } else {
+      console.log("Rate limit exceeded. Try again later.");
     }
   };
 }
 
-// Example usage:
-const limitedAPI = rateLimiter(2, 3); // 2 calls allowed per 3 seconds
-
-function mockAPI() {
-  console.log(" API called at", new Date().toLocaleTimeString());
+// Example function to test
+function sayHello(name) {
+  console.log(`Hello, ${name}!`);
 }
 
-limitedAPI(mockAPI);
-limitedAPI(mockAPI);
-limitedAPI(mockAPI); // blocked
+// Limit sayHello to 2 calls per 1000ms (1 second)
+const limitedHello = rateLimiter(sayHello, 2, 1000);
+
+// Test
+limitedHello("Monu"); //  runs
+limitedHello("John"); //  runs
+limitedHello("Dev");  //  ignored (rate limit)
+setTimeout(() => limitedHello("Alice"), 1100); //  runs after 1.1s
+
 
 ```
 
@@ -2313,8 +2317,9 @@ async function unstableAPI() {
 retry(unstableAPI, 3)
   .then(res => console.log("Result:", res))
   .catch(err => console.error("Final Error:", err));
-
-
+```
+## 📌 91. Implement Retry Logic
+```javascript
 
 ```
 
