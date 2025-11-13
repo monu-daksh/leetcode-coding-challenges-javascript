@@ -2433,6 +2433,34 @@ function mergeArrs(arr1, arr2){
 }
 console.log(mergeArrs(users, orders))
 ```
+## 📌 96. Replace All Nested String Values
+```javascript
+
+let obj ={
+  name: "monu",
+  details: { city: "delhi", country: "india" }
+}
+
+Output:
+{
+  name: "MONU",
+  details: { city: "DELHI", country: "INDIA" }
+}
+
+function modifiedObj(obj){
+    let result = {}
+    for(let key in obj){
+        if(typeof obj[key] === "object" && obj[key] !== null){
+            result[key] = modifiedObj(obj[key])
+        }else{
+            result[key] = obj[key].toUpperCase()
+        }
+    }
+    return result
+    
+}
+console.log(modifiedObj(obj))
+```
 
 
 
