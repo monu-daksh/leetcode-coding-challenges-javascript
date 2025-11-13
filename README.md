@@ -2411,6 +2411,28 @@ function unmergeObj(obj) {
 }
 console.log(unmergeObj(obj))
 ```
+## 📌 95. Merge Users and Orders by ID
+```javascript
+users = [{id:1,name:"Monu"},{id:2,name:"Daksh"}]
+orders = [{userId:1,product:"Laptop"},{userId:2,product:"Phone"}]
+
+Output:
+[
+  {id:1,name:"Monu",product:"Laptop"},
+  {id:2,name:"Daksh",product:"Phone"}
+]
+
+function mergeArrs(arr1, arr2){
+    return arr1.reduce((acc, obj)=>{
+        let matched = arr2.find((_obj) => _obj.userId === obj.id)
+        if(matched){
+            acc.push({...obj, product: matched.product})
+        }
+        return acc
+    }, [])
+}
+console.log(mergeArrs(users, orders))
+```
 
 
 
