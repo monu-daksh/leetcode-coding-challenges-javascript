@@ -2461,6 +2461,34 @@ function modifiedObj(obj){
 }
 console.log(modifiedObj(obj))
 ```
+## 📌 97. Modify Data & Keep Latest Timestamp
+```javascript
+let arr =[
+  { user:"A", login:"10:00" },
+  { user:"A", login:"10:10" },
+  { user:"B", login:"09:00" }
+]
+
+// Output:
+// [
+//   { user:"A", login:"10:10" },
+//   { user:"B", login:"09:00" }
+// ]
+
+function updateLatest(arr){
+    return arr.reduce((acc, obj)=>{
+        let existingIndex = acc.findIndex((o)=> o.user === obj.user)
+        if(existingIndex !== -1){
+            acc[existingIndex] = obj
+        }else{
+            acc.push(obj)
+        }
+        return acc
+    }, [])
+    
+}
+console.log(updateLatest(arr))
+```
 
 
 
