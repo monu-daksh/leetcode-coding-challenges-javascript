@@ -2383,9 +2383,33 @@ async function run(){
 run()
 ```
 
-## 📌 95. Delay Function Using Promise
+## 📌 95. Transform Nested User Data
 ```javascript
+let obj = { 
+  name: "Monu", 
+  details: { age: 25, city: "Delhi" } 
+}
 
+output:
+{
+  name: "Monu",
+  age: 25,
+  city: "Delhi"
+}
+
+function unmergeObj(obj) {
+  let result = {}
+
+  for (let key in obj) {
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      Object.assign(result, unmergeObj(obj[key]))
+    } else {
+      result[key] = obj[key]
+    }
+  }
+  return result
+}
+console.log(unmergeObj(obj))
 ```
 
 
