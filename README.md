@@ -2558,6 +2558,32 @@ function addMissingKeys(arr, defaultKeys){
     }, []);
 }
 ```
+## 📌 101. Replace Duplicate Characters with Count
+```javascript
+
+let str = "banana"
+//"b1a3n2"
+
+function countChars(str){
+    let map = {}
+    let result = ""
+    
+    for(let char of str){
+        map[char] = (map[char] || 0) +1
+    }
+    
+    let newSet = new Set()
+    for(let char of str){
+        if(!newSet.has(char)){
+            result += char + map[char]
+            newSet.add(char)
+        }
+    }
+    return result
+}
+console.log(countChars(str))
+```
+
 
 
 
