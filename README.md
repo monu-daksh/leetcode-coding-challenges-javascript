@@ -2535,10 +2535,28 @@ function insertAfterEveryN(arr, item, n){
     return result
 }
 console.log(insertAfterEveryN(arr, item, n))
+```
+## 📌 100. Add Missing Keys to Objects
+```javascript
+arr = [{ name: "A" }, { name: "B", age: 20 }]
+defaultKeys = { age: 0 }
+
+output:
+[{ name: "A", age: 0 }, { name: "B", age: 20 }]
 
 
 
-
+function addMissingKeys(arr, defaultKeys){
+    return arr.reduce((acc, item) => {
+        let missingKey = Object.keys(defaultKeys)[0];
+        if (!(missingKey in item)) {
+            acc.push({ ...item, ...defaultKeys });
+        } else {
+            acc.push(item);
+        }
+        return acc;
+    }, []);
+}
 ```
 
 
