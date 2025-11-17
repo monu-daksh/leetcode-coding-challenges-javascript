@@ -2511,6 +2511,35 @@ function removeDuplicate(arr){
     return [...map.values()]
 }
 ```
+## 📌 99. Insert Element After Every Nth Index
+```javascript
+let arr = [1,2,3,4,5,6]
+let item = "X"
+let n = 2
+
+output: 
+// [1,2,"X",3,4,"X",5,6]
+
+function insertAfterEveryN(arr, item, n){
+    let result = []
+    let count = 0
+    
+    for(let num of arr){
+        result.push(num)
+        count++
+        if(count === n){
+            result.push(item)
+            count =0
+        }
+    }
+    return result
+}
+console.log(insertAfterEveryN(arr, item, n))
+
+
+
+
+```
 
 
 
