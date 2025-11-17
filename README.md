@@ -2489,6 +2489,28 @@ function updateLatest(arr){
 }
 console.log(updateLatest(arr))
 ```
+## 📌 98. Remove Duplicate Objects Based on Key
+```javascript
+arr = [
+  { id: 1, name: "A" },
+  { id: 1, name: "X" },
+  { id: 2, name: "B" }
+]
+
+output:
+[
+  { id: 1, name: "X" },
+  { id: 2, name: "B" }
+]
+
+function removeDuplicate(arr){
+    const map = new Map()
+    for (let item of arr) {
+        map.set(item.id, item)
+    }
+    return [...map.values()]
+}
+```
 
 
 
