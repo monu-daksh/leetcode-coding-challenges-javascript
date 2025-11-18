@@ -2583,6 +2583,32 @@ function countChars(str){
 }
 console.log(countChars(str))
 ```
+## 📌 102. Swap every two characters
+```javascript
+
+let str = "abcdef"
+// Output: "badcfe"
+
+function swapTwoChar(str){
+    let result = ""
+    
+    for(let i =0; i < str.length; i+=2){
+        let first = str[i]
+        let second = str[i+1]
+        
+        if(second !== undefined){
+            result += second + first
+        }else{
+            result += first
+        }
+    }
+    
+    return result
+}
+
+console.log(swapTwoChar(str))
+```
+
 
 
 
