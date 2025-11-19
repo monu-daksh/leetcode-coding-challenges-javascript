@@ -2634,6 +2634,25 @@ function mergeArr(arr1, arr2, arr3){
 
 console.log(mergeArr(emp, dept, sal))
 ```
+## 📌 104. Flatten nested categories
+```javascript
+
+let arr = [{id:1,children:[{id:2},{id:3}]}]
+
+output:
+// [1, 2, 3]
+
+function flattenArr(arr){
+    return arr.reduce((acc, curr)=>{
+         acc.push(curr.id)
+         if(Array.isArray(curr.children)){
+            acc.push(... flattenArr(curr.children))
+         }
+         return acc
+    }, [])
+}
+console.log(flattenArr(arr))
+```
 
 
 
