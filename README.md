@@ -2653,6 +2653,24 @@ function flattenArr(arr){
 }
 console.log(flattenArr(arr))
 ```
+## 📌 105. Find placeholder and replace
+```javascript
+
+let template = "Hi {{name}}, your score is {{score}}"
+let data = {name:"Monu",score:90}
+
+output:
+//"Hi Monu, your score is 90"
+
+function replacePlaceHolderWithValue(str, obj){
+    for(let key in obj){
+        let placeholder = `{{${key}}}`
+        str = str.replace(placeholder, obj[key])
+    }
+    return str
+}
+console.log(replacePlaceHolderWithValue(template, data))
+```
 
 
 
