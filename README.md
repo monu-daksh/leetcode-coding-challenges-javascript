@@ -2608,6 +2608,32 @@ function swapTwoChar(str){
 
 console.log(swapTwoChar(str))
 ```
+## 📌 103. Merge employee + department + salary records
+```javascript
+let emp = [{id:1,name:"A"}]
+let dept = [{id:1,dept:"IT"}]
+let sal = [{id:1,salary:50000}]
+
+output:-
+//[{id:1,name:"A",dept:"IT",salary:50000}]
+
+function mergeArr(arr1, arr2, arr3){
+    return arr1.reduce((acc, curr)=>{
+        let d = arr2.find((_d)=> _d.id === curr.id)
+        let s = arr3.find((_s)=> _s.id === curr.id)
+        
+        acc.push({
+            ...curr,
+            ...d,
+            ...s
+        })
+        return acc
+        
+    }, [])
+}
+
+console.log(mergeArr(emp, dept, sal))
+```
 
 
 
