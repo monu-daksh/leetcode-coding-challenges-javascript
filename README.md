@@ -2729,6 +2729,28 @@ function checkDiff(obj1, obj2){
 }
 console.log(checkDiff(old, updated))
 ```
+## 📌 108. Rename Keys Based on Mapping
+```javascript
+
+let obj = {fname:"Monu", age:25}
+let mapping = {fname:"firstName"}
+// Output: {firstName:"Monu", age:25}
+
+
+function mapObj(obj1, obj2){
+    let result = {}
+    
+    for(let key in obj1){
+        if(obj2.hasOwnProperty(key)){
+            result[obj2[key]] = obj1[key]
+        }else{
+            result[key] = obj1[key]
+        }
+    }
+    return result
+}
+console.log(mapObj(obj, mapping))
+```
 
 
 
