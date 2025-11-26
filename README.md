@@ -2671,6 +2671,32 @@ function replacePlaceHolderWithValue(str, obj){
 }
 console.log(replacePlaceHolderWithValue(template, data))
 ```
+## 📌 106. Create Groups of Consecutive Numbers
+```javascript
+
+let arr = [1,2,3,7,8,10,11,12]
+// Output: [[1,2,3],[7,8],[10,11,12]]
+
+function groupConsecutiveArr(arr){
+    let subArr = [arr[0]]
+    let result = []
+    
+    for(let i=1; i <= arr.length-1; i++){
+        if(arr[i] - arr[i -1] === 1){
+             subArr.push(arr[i])
+        }else{
+             result.push(subArr)
+             subArr =[ arr[i]]
+        }
+    }
+    
+    result.push(subArr)
+    return result
+    
+}
+console.log(groupConsecutiveArr(arr))
+```
+
 
 
 
