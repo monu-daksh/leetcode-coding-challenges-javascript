@@ -2771,6 +2771,31 @@ function swapfirstTwoLetters(str){
 }
 console.log(swapfirstTwoLetters(str))
 ```
+## 📌 110. Interleave Two Strings Character-Wise
+```javascript
+let str1 = "abc"
+let str2 = "XYZ"
+// Output: "aXbYcZ"
+
+function interleaveTwoString{
+    let i =0
+    let j =0
+    
+    let result = ""
+    
+    while(i < str1.length || j < str2.length){
+        if( i < str1.length){
+            result += str1[i++]
+        }
+        
+        if(j < str2.length){
+            result += str2[j++]
+        }
+    }
+    return result
+}
+console.log(interleaveTwoString(str1, str2))
+```
 
 
 
