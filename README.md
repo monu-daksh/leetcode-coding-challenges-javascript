@@ -2751,7 +2751,26 @@ function mapObj(obj1, obj2){
 }
 console.log(mapObj(obj, mapping))
 ```
+## 📌 109. Swap First and Last Letter of Every Word
+```javascript
+let str = "coding is fun"
+// Output: "goding si nuf"
 
+
+function swapfirstTwoLetters(str){
+    let splitStr = str.split(" ")
+    let result = []
+    
+    for(let word of splitStr){
+        let first = word[0]
+        let last = word[word.length -1]
+        let middle = word.slice(1, -1)
+       result.push(last + middle + first)
+    }
+    return result.join(" ")
+}
+console.log(swapfirstTwoLetters(str))
+```
 
 
 
