@@ -2696,6 +2696,39 @@ function groupConsecutiveArr(arr){
 }
 console.log(groupConsecutiveArr(arr))
 ```
+## 📌 107. Highlight Changed Keys (Diff Two Objects)
+```javascript
+
+let old = {a:1, b:2, c:3};
+let updated = {a:1, b:5, d:10}
+
+// Output:
+// {changed:["b"], removed:["c"], added:["d"]}
+
+function checkDiff(obj1, obj2){
+    let result = {
+        changed:[],
+        removed:[],
+        added:[]
+    }
+    
+    for(let key in obj1){
+        if(!(key in obj2)){
+            result.removed.push(key)
+        }else if(obj1[key] !== obj2[key]){
+            result.changed.push(key)
+        }
+    }
+    
+    for(let key in obj2){
+        if(!(key in obj1)){
+            result.added.push(key)
+        }
+    }
+    return result
+}
+console.log(checkDiff(old, updated))
+```
 
 
 
