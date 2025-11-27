@@ -2808,6 +2808,22 @@ function extractStr(str){
 }
 console.log(extractStr(str))
 ```
+## 📌 112. Create Frequency String (sorted alphabetically)
+```javascript
+let str = "babaac"
+// Output: "a3b2c1"
+
+function sortAlphabetically(str){
+    let freq = {} // { b: 2, a: 3, c: 1 }
+    
+    for(let char of str){
+        freq[char] = (freq[char] || 0) +1
+    }
+     let result = Object.keys(freq).sort().map((key)=> key + freq[key]).join("")
+     return result
+}
+console.log(sortAlphabetically(str))
+```
 
 
 
