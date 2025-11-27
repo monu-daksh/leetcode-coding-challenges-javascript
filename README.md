@@ -2853,6 +2853,33 @@ function capEveryCharAfterSymbol(str){
 }
 console.log(capEveryCharAfterSymbol(str))
 ```
+## 📌 113. Find First Word With Unique Characters
+```javascript
+let str = "apple car moon ball"
+// Output: "car"
+
+
+function findFirstWordWithUniqueChar(str){
+    let words = str.split(" ")
+    
+    for(let word of words){
+        let freq = {}
+        let unique = true
+        
+        for(let char of word){
+            freq[char] = (freq[char] || 0) +1
+            if(freq[char] > 1){
+                unique = false
+                break 
+            }
+        }
+        if(unique) return word
+    }
+    return ""
+}
+
+console.log(findFirstWordWithUniqueChar(str))
+```
 
 
 
