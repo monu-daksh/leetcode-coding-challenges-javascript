@@ -2796,7 +2796,18 @@ function interleaveTwoString{
 }
 console.log(interleaveTwoString(str1, str2))
 ```
+## 📌 111. Extract Characters Between Two Symbols
+```javascript
+let str = "start[hello]end"
+// Output: "hello"
 
+function extractStr(str){
+    let startIndex = str.indexOf("[")
+    let endIndex = str.indexOf("]")
+    return str.slice(startIndex+1, endIndex)
+}
+console.log(extractStr(str))
+```
 
 
 
