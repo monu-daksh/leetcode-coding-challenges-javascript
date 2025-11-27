@@ -2824,6 +2824,35 @@ function sortAlphabetically(str){
 }
 console.log(sortAlphabetically(str))
 ```
+## 📌 113. Capitalize Every Character After Special Symbol
+```javascript
+let str = "hello#world$monu"
+// Output: "hello#World$Monu"
+
+function capEveryCharAfterSymbol(str){
+    let result = ""
+    let shouldCap = false
+    
+    for(let i =0; i < str.length; i++){
+        char = str[i]
+        
+        let isLetter = (char >= "a" && char <= "z" || char >= "A" && char <= "Z")
+        
+        if(!isLetter){
+            result += char
+            shouldCap = true
+        }else if(shouldCap){
+            result += char.toUpperCase()
+            shouldCap = false
+        }else{
+            result += char.toLowerCase()
+        }
+    }
+    return result
+    
+}
+console.log(capEveryCharAfterSymbol(str))
+```
 
 
 
