@@ -2880,7 +2880,31 @@ function findFirstWordWithUniqueChar(str){
 
 console.log(findFirstWordWithUniqueChar(str))
 ```
+## 📌 114. Move All Increasing Pairs Before Decreasing Ones
+```javascript
 
+let arr = [4, 1, 5, 2, 9, 7]
+// Pairs: (4>1)=dec, (1<5)=inc, (5>2)=dec, (2<9)=inc, (9>7)=dec
+// Expected Output: inc pairs first → [1,5,2,9,4,1,5,2,9,7]
+
+function increasingOrder(arr){
+    let inc = []
+    let dec = []
+    
+    for(let i=0; i < arr.length; i++){
+        let a = arr[i]
+        let b = arr[i+1]
+        
+        if(a < b){
+            inc.push(a, b)
+        }else if(a > b){
+            dec.push(a, b)
+        }
+    }
+    return [...inc, ...dec]
+}
+console.log(increasingOrder(arr))
+```
 
 
 
