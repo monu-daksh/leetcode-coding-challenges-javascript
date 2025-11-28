@@ -2905,6 +2905,36 @@ function increasingOrder(arr){
 }
 console.log(increasingOrder(arr))
 ```
+## 📌 115. Reverse Only Elements at Odd Indexes
+```javascript
+// 3. Reverse Only Elements at Odd Indexes
+
+let arr = [10,20,30,40,50,60]
+// Odd indexes → 20,40,60
+// Expected Output: [10,60,30,40,50,20]
+
+function reverseOddIndex(arr){
+    let odds = []
+    
+    for(let i =0; i < arr.length; i++){
+        if(i % 2 !==0){
+            odds.push(arr[i])
+        }
+    }
+    
+    odds.reverse()
+    
+    let idx = 0
+    
+    for(let i =0; i < arr.length; i++){
+         if(i % 2 !== 0){
+             arr[i] = odds[idx++]
+         }
+    }
+    return arr
+}
+console.log(reverseOddIndex(arr))
+```
 
 
 
