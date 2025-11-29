@@ -1,6 +1,6 @@
 # 🚀 LeetCode JavaScript Solutions & Coding Challenges
 
-This repo contains my **LeetCode solutions** and **JavaScript coding snippets**.  
+This repo contains my **JavaScript coding snippets**.  
 It is designed to help developers **learn problem-solving** and **prepare for coding interviews**.
 
 ## 📂 Categories
