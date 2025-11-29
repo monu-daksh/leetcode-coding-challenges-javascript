@@ -2935,9 +2935,7 @@ function reverseOddIndex(arr){
 }
 console.log(reverseOddIndex(arr))
 ```
-## 📌 116. Reverse Only Elements at Odd Indexes
-```javascript
-```
+
 
 
 
