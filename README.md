@@ -2907,8 +2907,6 @@ console.log(increasingOrder(arr))
 ```
 ## 📌 115. Reverse Only Elements at Odd Indexes
 ```javascript
-// 3. Reverse Only Elements at Odd Indexes
-
 let arr = [10,20,30,40,50,60]
 // Odd indexes → 20,40,60
 // Expected Output: [10,60,30,40,50,20]
