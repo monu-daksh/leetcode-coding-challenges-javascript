@@ -12,7 +12,6 @@ It is designed to help developers **learn problem-solving** and **prepare for co
 
 ## 🔥 Why this repo?
 - ✅ Copy-paste friendly **JavaScript snippets**  
-- ✅ Structured by **topic & difficulty**  
 - ✅ Beginner-friendly + Interview-ready  
 
 ## 📌 1. Example Problem: Two Sum
