@@ -2932,7 +2932,26 @@ function reverseOddIndex(arr){
 }
 console.log(reverseOddIndex(arr))
 ```
+## 📌 116. Replace digits with
+```
+javascript
+let str ="a1b2c3"
 
+// Output: "a#b#c#"
+
+function replaceDigits(str){
+    return str.split("").reduce((acc, val)=> {
+          if(!isNaN(val)){
+              acc += "#"
+          }else{
+              acc += val
+          }
+        return acc
+        
+    }, "")
+}
+console.log(replaceDigits(str))
+```
 
 
 
