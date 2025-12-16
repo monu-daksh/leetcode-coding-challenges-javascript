@@ -2975,7 +2975,37 @@ function sumNumbersInString(str){
 }
 console.log(sumNumbersInString(str))
 ```
+## 📌 118. Reverse but keep special chars
+```
+javascript
+let str ="a@b#c"
+// Output:"c@b#a"
 
+
+function reverseStr(str){
+    let chars = []
+    let result = ""
+    
+    for(let char of str){
+        if(char >= "a" && char <= "z"){
+            chars.push(char)
+        }
+    }
+    
+    let reverseArr = chars.reverse()
+    let letterIndex = 0
+    
+    for(let i=0; i < str.length; i++){
+         if(str[i] >= "a" && str[i] <= "z"){
+             result += reverseArr[letterIndex++]
+         }else{
+             result += str[i]
+         }
+    }
+    return result
+}
+console.log(reverseStr(str))
+```
 
 
 
