@@ -2952,7 +2952,29 @@ function replaceDigits(str){
 }
 console.log(replaceDigits(str))
 ```
+## 📌 117. Sum numbers in string
+```
+javascript
 
+let str ="ab12cd3"
+// Output:15
+
+function sumNumbersInString(str){
+    let sum = 0
+    let temp = ""
+    
+    for(let char of str){
+        if(!isNaN(char)){
+            temp+= char
+        }else{
+            sum += Number(temp)
+            temp=""
+        }
+    }
+    return sum + Number(temp)
+}
+console.log(sumNumbersInString(str))
+```
 
 
 
