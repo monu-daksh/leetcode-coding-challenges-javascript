@@ -75,7 +75,40 @@ function getPairs(nums, k){
     return{pairs, count}
 }
 
-console.log(getPairs(nums, k))
+2-> methods
+
+let nums = [1, 5, 3, 4, 2], k = 2
+// Output: { pairs: [ [ 1, 3 ], [ 3, 5 ], [ 2, 4 ] ], count: 3 }
+
+
+function countPair(nums, k){
+    nums.sort((a, b) => a - b)
+    
+     
+     let i =0
+     let j = 1
+     
+     let pairs = []
+     
+     while(i < nums.length){
+         let diff = nums[j] - nums[i]
+         
+         if(diff == k){
+             pairs.push([nums[j], nums[i]])
+             i++
+             j++
+         }else if(diff < k){
+              j++
+         }else{
+             i++
+         }
+     }
+    return pairs
+}
+
+console.log(countPair(nums, k))
+
+
 ```
 ## 📌 4. Replace Every Vowel with Next Alphabet
 ```javascript
