@@ -1523,6 +1523,7 @@ console.log(plusOne(arr))
 ```
 ## 📌 63. Add Two Numbers in Array Form
 ```javascript
+Solution: -> 1
 let num1 = [2, 7, 4], num2 = [5, 6, 4]
 // Output : [8, 3, 8]
 
@@ -1545,7 +1546,28 @@ function sumOfArr(arr1, arr2){
     }
     return result
 }
-console.log(sumOfArr(num1, num2))
+
+Solution: -> 2
+
+function addTwoArr(arr1, arr2){
+    let result = []
+    let carry = 0
+
+    // start from last index (units place)
+    for (let i = arr1.length - 1; i >= 0; i--) {
+        let sum = arr1[i] + arr2[i] + carry
+        result.unshift(sum % 10)   // current digit
+        carry = Math.floor(sum / 10) // carry for next step
+    }
+
+    // if carry remains, add it at the front
+    if (carry > 0) {
+        result.unshift(carry)
+    }
+    
+}
+
+console.log(addTwoArr(num1, num2))
 ```
 ## 📌 64. Subarray with Given Sum
 ```javascript
