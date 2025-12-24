@@ -3116,5 +3116,41 @@ console.log(removeCharsAtPrimeIndex("javascript"))
 
 ```
 
+## 📌 120. Capitalize only words longer than 5 characters
+```javascript
+
+let str = "learn javascript by building logic"
+
+//"learn JAVASCRIPT by BUILDING logic"
+
+function capitalizeWordLongerThenFiveChar(str){
+    
+    // solution: 1
+       return str.split(" ").map((word)=> word.length >5 ? word.toUpperCase(): word).join(" ")
+    
+    
+    
+  //  solution: 2
+
+    let result = ""
+    let strWord = str.split(" ")    
+    for(let i =0; i < strWord.length; i++){
+       
+         if(strWord[i].length > 5){
+             result += strWord[i].toUpperCase()
+         }else{
+             result += strWord[i].toLowerCase()
+         }
+         
+          if(i < strWord.length - 1){
+            result += " "
+        }
+    }
+    return result
+}
+
+console.log(capitalizeWordLongerThenFiveChar(str))
+```
+
 
 
