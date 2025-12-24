@@ -3081,9 +3081,94 @@ function reverseStr(str){
 }
 console.log(reverseStr(str))
 ```
-## 📌 119. change
-```javascript
+
+## 📌 119. Remove characters at prime indices
 ```
+javascript
+let str = "javascript"
+
+// output = "jvsrpt"
+
+function removeCharsAtPrimeIndex(str) {
+
+  function isPrime(num) {
+    if (num <= 1) return false
+    if (num === 2) return true
+    if (num % 2 === 0) return false
+
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+      if (num % i === 0) return false
+    }
+    return true
+  }
+
+  let result = ""
+
+  for (let i = 0; i < str.length; i++) {
+    if (!isPrime(i)) {
+      result += str[i]
+    }
+  }
+
+  return result
+}
+
+console.log(removeCharsAtPrimeIndex("javascript"))
+
+```
+
+## 📌 120. Capitalize only words longer than 5 characters
+```javascript
+
+let str = "learn javascript by building logic"
+
+//"learn JAVASCRIPT by BUILDING logic"
+
+function capitalizeWordLongerThenFiveChar(str){
+    
+    // solution: 1
+       return str.split(" ").map((word)=> word.length >5 ? word.toUpperCase(): word).join(" ")
+    
+    
+    
+  //  solution: 2
+
+    let result = ""
+    let strWord = str.split(" ")    
+    for(let i =0; i < strWord.length; i++){
+       
+         if(strWord[i].length > 5){
+             result += strWord[i].toUpperCase()
+         }else{
+             result += strWord[i].toLowerCase()
+         }
+         
+          if(i < strWord.length - 1){
+            result += " "
+        }
+    }
+    return result
+}
+
+console.log(capitalizeWordLongerThenFiveChar(str))
+```
+## 📌 121. Expand array based on value (Repeat element n times.)
+```javascript
+
+let arr = [1, 3, 2]
+
+//output:  [1, 3, 3, 3, 2, 2]
+
+function repatedElementsNtimes(arr){
+    let result = []
+    for(let num of arr){
+        let nTimesArr = Array(num).fill(num)
+        result.push(...nTimesArr)
+    }
+    return result
+}
+console.log(repatedElementsNtimes(arr))
+
 
 
 
