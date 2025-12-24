@@ -3081,6 +3081,40 @@ function reverseStr(str){
 }
 console.log(reverseStr(str))
 ```
+## 📌 119. Remove characters at prime indices
+```
+javascript
+let str = "javascript"
+
+// output = "jvsrpt"
+
+function removeCharsAtPrimeIndex(str) {
+
+  function isPrime(num) {
+    if (num <= 1) return false
+    if (num === 2) return true
+    if (num % 2 === 0) return false
+
+    for (let i = 3; i <= Math.sqrt(num); i += 2) {
+      if (num % i === 0) return false
+    }
+    return true
+  }
+
+  let result = ""
+
+  for (let i = 0; i < str.length; i++) {
+    if (!isPrime(i)) {
+      result += str[i]
+    }
+  }
+
+  return result
+}
+
+console.log(removeCharsAtPrimeIndex("javascript"))
+
+```
 
 
 
