@@ -3081,6 +3081,7 @@ function reverseStr(str){
 }
 console.log(reverseStr(str))
 ```
+
 ## 📌 119. Remove characters at prime indices
 ```
 javascript
@@ -3151,7 +3152,7 @@ function capitalizeWordLongerThenFiveChar(str){
 
 console.log(capitalizeWordLongerThenFiveChar(str))
 ```
-## 📌 120. Expand array based on value (Repeat element n times.)
+## 📌 121. Expand array based on value (Repeat element n times.)
 ```javascript
 
 let arr = [1, 3, 2]
@@ -3168,7 +3169,6 @@ function repatedElementsNtimes(arr){
 }
 console.log(repatedElementsNtimes(arr))
 
-```
 
 
 
