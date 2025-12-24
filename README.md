@@ -3151,6 +3151,24 @@ function capitalizeWordLongerThenFiveChar(str){
 
 console.log(capitalizeWordLongerThenFiveChar(str))
 ```
+## 📌 120. Expand array based on value (Repeat element n times.)
+```javascript
+
+let arr = [1, 3, 2]
+
+//output:  [1, 3, 3, 3, 2, 2]
+
+function repatedElementsNtimes(arr){
+    let result = []
+    for(let num of arr){
+        let nTimesArr = Array(num).fill(num)
+        result.push(...nTimesArr)
+    }
+    return result
+}
+console.log(repatedElementsNtimes(arr))
+
+```
 
 
 
