@@ -1,4 +1,8 @@
 # 🚀 LeetCode JavaScript Solutions & Coding Challenges
+![JavaScript](https://img.shields.io/badge/Language-JavaScript-yellow)
+![LeetCode](https://img.shields.io/badge/Problems-LeetCode-blue)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
 
 This repo contains my **JavaScript coding snippets**.  
 It is designed to help developers **learn problem-solving** and **prepare for coding interviews**.
