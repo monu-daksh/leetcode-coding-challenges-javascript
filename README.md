@@ -3,20 +3,36 @@
 ![LeetCode](https://img.shields.io/badge/Problems-LeetCode-blue)
 ![Status](https://img.shields.io/badge/Status-Active-success)
 
+A curated collection of **LeetCode JavaScript solutions** focused on  
+**data structures, algorithms, and coding interview preparation**.
 
-This repo contains my **JavaScript coding snippets**.  
-It is designed to help developers **learn problem-solving** and **prepare for coding interviews**.
+This repository is designed for developers who want to:
+- Improve **problem-solving skills**
+- Master **JavaScript DSA patterns**
+- Prepare for **technical interviews** using real LeetCode problems
 
-## 📂 Categories
-- Arrays (Two Sum, Maximum Subarray, Rotate Array...)
-- Strings (Valid Palindrome, Anagram, Substring...)
-- Linked List (Reverse LL, Detect Cycle...)
-- Dynamic Programming (Climbing Stairs, Coin Change...)
-- Other coding challenges from LeetCode & interviews
+---
 
-## 🔥 Why this repo?
-- ✅ Copy-paste friendly **JavaScript snippets**  
-- ✅ Beginner-friendly + Interview-ready  
+## 📂 Problem Categories (DSA Patterns)
+
+This repo includes commonly asked **LeetCode and interview questions**, such as:
+
+- **Arrays** – Two Sum, Maximum Subarray, Rotate Array
+- **Strings** – Valid Palindrome, Anagram, Substring Problems
+- **Linked List** – Reverse Linked List, Detect Cycle
+- **Dynamic Programming** – Climbing Stairs, Coin Change
+- **Mixed Interview Challenges** – Logic-based and pattern-driven problems
+
+Problems are explained with **clean JavaScript code**, optimized logic, and interview-ready approaches.
+
+---
+
+## 🔥 Why This Repository?
+
+- ✅ Clean and readable **JavaScript (ES6+) solutions**
+- ✅ Focus on **optimal time & space complexity**
+- ✅ Beginner-friendly explanations with interview relevance
+- ✅ Ideal for **frontend & backend interview preparation**
 
 ## 📌 1. Example Problem: Two Sum
 ```javascript
