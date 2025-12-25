@@ -3198,6 +3198,27 @@ function subtractNextOne(arr){
 }
 console.log(subtractNextOne(arr))
 ```
+## 📌 123. Insert sum between every two numbers
+```javascript
+let arr = [2, 4, 6]
+
+// output:-> [2, 6, 4, 10, 6]
+
+function insertSumBetween(arr){
+    let result = []
+    
+    for(let i=0; i < arr.length; i++){
+        result.push(arr[i])
+        
+        if(i < arr.length-1){
+            result.push(arr[i] + arr[i +1])
+        }
+    }
+    return result
+   
+}
+console.log(insertSumBetween(arr))
+```
 
 
 
