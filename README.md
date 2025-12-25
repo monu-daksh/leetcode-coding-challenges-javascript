@@ -3245,5 +3245,37 @@ function removeFalseValues(obj, result={}){
 
 console.log(removeFalseValues(obj))
 ```
+## 📌 125. Transform object into grouped array
+```javascript
+
+let obj = {
+  user1: { role: "admin" },
+  user2: { role: "user" },
+  user3: { role: "admin" }
+}
+
+output: -->
+{
+  admin: ["user1", "user3"],
+  user: ["user2"]
+}
+
+
+function groupElement(obj){
+    return Object.keys(obj).reduce((acc, key)=>{
+          
+           if(!acc[obj[key].role]){
+               acc[obj[key].role] = []
+           }
+           
+           acc[obj[key].role].push(key)
+         return acc
+        
+    },{})
+    
+}
+
+console.log(groupElement(obj))
+```
 
 
