@@ -3219,6 +3219,31 @@ function insertSumBetween(arr){
 }
 console.log(insertSumBetween(arr))
 ```
+## 📌 124. Remove keys whose values are falsy (deep)
+```javascript
 
+let obj = { a: 0, b: { c: null, d: 4 } }
+
+// output:-> { b: { d: 4 } }
+
+function removeFalseValues(obj, result={}){
+    if(typeof obj !== "object" || obj === null){
+        return result
+    }
+    
+    for(let key in obj){
+        if(typeof obj[key] === "object" && obj[key] !== null){
+           result[key] = removeFalseValues(obj[key])
+        }else{
+            if(Boolean(obj[key])){
+                result[key] = obj[key]
+            }
+        }
+    }
+    return result
+}
+
+console.log(removeFalseValues(obj))
+```
 
 
