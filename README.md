@@ -3168,7 +3168,36 @@ function repatedElementsNtimes(arr){
     return result
 }
 console.log(repatedElementsNtimes(arr))
+```
+## 📌 122. Convert array to running difference (Subtract next element from current.)
+```javascript
 
+let arr = [10, 5, 3]
+
+
+// output:  [10, 5, 2]
+
+function subtractNextOne(arr){
+    
+    // Solution:-->  1
+    if(arr.length === 0) return arr
+    
+    let result = [arr[0]]
+    
+    for(let i=1; i < arr.length; i++){
+        let val = arr[i-1] - arr[i]
+        result.push(val)
+    }
+    
+    return result
+    
+    
+    // Solution:--> 2
+    return arr.map((num, index) => index === 0 ? num : arr[index - 1] - num)
+    
+}
+console.log(subtractNextOne(arr))
+```
 
 
 
