@@ -3168,7 +3168,114 @@ function repatedElementsNtimes(arr){
     return result
 }
 console.log(repatedElementsNtimes(arr))
+```
+## 📌 122. Convert array to running difference (Subtract next element from current.)
+```javascript
+
+let arr = [10, 5, 3]
 
 
+// output:  [10, 5, 2]
+
+function subtractNextOne(arr){
+    
+    // Solution:-->  1
+    if(arr.length === 0) return arr
+    
+    let result = [arr[0]]
+    
+    for(let i=1; i < arr.length; i++){
+        let val = arr[i-1] - arr[i]
+        result.push(val)
+    }
+    
+    return result
+    
+    
+    // Solution:--> 2
+    return arr.map((num, index) => index === 0 ? num : arr[index - 1] - num)
+    
+}
+console.log(subtractNextOne(arr))
+```
+## 📌 123. Insert sum between every two numbers
+```javascript
+let arr = [2, 4, 6]
+
+// output:-> [2, 6, 4, 10, 6]
+
+function insertSumBetween(arr){
+    let result = []
+    
+    for(let i=0; i < arr.length; i++){
+        result.push(arr[i])
+        
+        if(i < arr.length-1){
+            result.push(arr[i] + arr[i +1])
+        }
+    }
+    return result
+   
+}
+console.log(insertSumBetween(arr))
+```
+## 📌 124. Remove keys whose values are falsy (deep)
+```javascript
+
+let obj = { a: 0, b: { c: null, d: 4 } }
+
+// output:-> { b: { d: 4 } }
+
+function removeFalseValues(obj, result={}){
+    if(typeof obj !== "object" || obj === null){
+        return result
+    }
+    
+    for(let key in obj){
+        if(typeof obj[key] === "object" && obj[key] !== null){
+           result[key] = removeFalseValues(obj[key])
+        }else{
+            if(Boolean(obj[key])){
+                result[key] = obj[key]
+            }
+        }
+    }
+    return result
+}
+
+console.log(removeFalseValues(obj))
+```
+## 📌 125. Transform object into grouped array
+```javascript
+
+let obj = {
+  user1: { role: "admin" },
+  user2: { role: "user" },
+  user3: { role: "admin" }
+}
+
+output: -->
+{
+  admin: ["user1", "user3"],
+  user: ["user2"]
+}
+
+
+function groupElement(obj){
+    return Object.keys(obj).reduce((acc, key)=>{
+          
+           if(!acc[obj[key].role]){
+               acc[obj[key].role] = []
+           }
+           
+           acc[obj[key].role].push(key)
+         return acc
+        
+    },{})
+    
+}
+
+console.log(groupElement(obj))
+```
 
 
