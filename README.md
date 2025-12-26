@@ -3277,5 +3277,26 @@ function groupElement(obj){
 
 console.log(groupElement(obj))
 ```
+## 📌 126. Expand string by index position
+```javascript
+
+let str = "abc"
+
+// "abbccc"
+
+function expandStringByIndex(str){
+    return str.split("").reduce((acc, char, index)=>{
+        let repeatedNum = char.repeat(index+1)
+        // console.log(repeatedNum)
+        
+        acc += repeatedNum
+        
+        return acc
+        
+    }, "")
+    
+}
+console.log(expandStringByIndex(str))
+```
 
 
