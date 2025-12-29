@@ -3298,5 +3298,42 @@ function expandStringByIndex(str){
 }
 console.log(expandStringByIndex(str))
 ```
+## 📌 127. Fill gaps with previous value
+```javascript
+
+let arr = [2,null,null,5,null,7]
+// Output: [2,2,2,5,5,7]
+
+
+function fillGapWithPre(arr){
+
+   Solution 1:--
+
+    let result = [];
+    let prev;
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === null) {
+            result.push(prev);
+        } else {
+            prev = arr[i];
+            result.push(arr[i]);
+        }
+    }
+
+    return result;
+
+    Soluttion 2:--
+
+    for(let i=0; i < arr.length; i++){
+        if(arr[i] === null){
+            arr[i] = arr[i-1]
+        }
+    }
+    return arr
+}
+
+console.log(fillGapWithPre(arr))
+```
 
 
