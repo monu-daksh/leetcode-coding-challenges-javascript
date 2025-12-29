@@ -3424,8 +3424,19 @@ function mergeObj(obj1, obj2){
     return result
 }
 console.log(mergeObj(obj1, obj2))
+```
+## 📌 132. Group by property
+```javascript
+let arr = [{type:"a"},{type:"b"},{type:"a"}]
+// Output: {a:2,b:1}
 
-
+function groupElementByProp(arr){
+    return arr.reduce((acc, obj)=>{
+          acc[obj.type] = (acc[obj.type]|| 0) +1
+          return acc
+    }, {})
+}
+console.log(groupElementByProp(arr))
 ```
 
 
