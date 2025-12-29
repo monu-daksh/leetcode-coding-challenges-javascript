@@ -3402,6 +3402,31 @@ function expandStr(str){
 
 console.log(expandStr(str))
 ```
+## 📌 131. Deep merge with sum
+```javascript
+let obj1 = {a:2,b:{x:3}, c:1}
+let obj2 = {a:5,b:{x:1}, d:2}
+// Output: { a: 7, b: { x: 4 }, c: 1, d: 2 }
+
+function mergeObj(obj1, obj2){
+    
+    let result = {...obj1}
+    
+    for(let key in obj2){
+        if(typeof obj2[key] === "object" && obj2[key] !== null){
+            result[key] = mergeObj(result[key], obj2[key])
+        }else if(result[key]){
+            result[key] = result[key] + obj2[key]
+        }else{
+            result[key] = obj2[key]
+        }
+    }
+    return result
+}
+console.log(mergeObj(obj1, obj2))
+
+
+```
 
 
 
