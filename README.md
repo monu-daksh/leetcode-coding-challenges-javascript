@@ -3335,5 +3335,39 @@ function fillGapWithPre(arr){
 
 console.log(fillGapWithPre(arr))
 ```
+## 📌 128. Insert sum after every N elements
+```javascript
+
+let arr =[1,2,3,4,5,6], n=3
+// Output: [1,2,3,6,4,5,6,15]
+
+
+function insertSum(arr, n){
+    let result = []
+    let sum = 0
+    let count =0
+    
+    for(let i =0; i < arr.length; i++){
+        
+        result.push(arr[i])
+        
+        sum += arr[i]
+        count += 1
+        
+        if(count === n){
+            result.push(sum)
+            count =0
+            sum= 0
+        }
+    }
+   
+   return result
+    
+}
+
+console.log(insertSum(arr, n))
+
+```
+
 
 
