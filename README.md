@@ -3380,6 +3380,28 @@ function buildStair(arr){
 }
 console.log(buildStair(arr))
 ```
+## 📌 130. Expand number pattern
+```javascript
+
+let str = "a2b3"
+// Output: "aabbb"
+
+function expandStr(str){
+    let result = ""
+    let char = null
+    
+    for(let i=0; i < str.length; i++){
+        if(isNaN(str[i])){
+            char = str[i]
+        }else{
+            result += char.repeat(Number(str[i]))
+        }
+    }
+    return result
+}
+
+console.log(expandStr(str))
+```
 
 
 
