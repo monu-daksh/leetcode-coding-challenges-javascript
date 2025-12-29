@@ -3306,7 +3306,6 @@ let arr = [2,null,null,5,null,7]
 
 
 function fillGapWithPre(arr){
-
    Solution 1:--
 
     let result = [];
@@ -3320,11 +3319,9 @@ function fillGapWithPre(arr){
             result.push(arr[i]);
         }
     }
-
     return result;
 
     Soluttion 2:--
-
     for(let i=0; i < arr.length; i++){
         if(arr[i] === null){
             arr[i] = arr[i-1]
@@ -3332,7 +3329,6 @@ function fillGapWithPre(arr){
     }
     return arr
 }
-
 console.log(fillGapWithPre(arr))
 ```
 ## 📌 128. Insert sum after every N elements
@@ -3348,9 +3344,8 @@ function insertSum(arr, n){
     let count =0
     
     for(let i =0; i < arr.length; i++){
-        
         result.push(arr[i])
-        
+
         sum += arr[i]
         count += 1
         
@@ -3360,13 +3355,30 @@ function insertSum(arr, n){
             sum= 0
         }
     }
-   
    return result
-    
 }
-
 console.log(insertSum(arr, n))
+```
+## 📌 129. Build staircase array
+```javascript
+  let arr = [1,2,3,4,5,6]
+// Output: [[1],[2,3],[4,5,6]]
 
+
+function buildStair(arr){
+    
+    let result = []
+    let step = 1
+    
+     for(let i =0; i < arr.length;){
+         let subArr = arr.slice(i, i+step)
+         result.push(subArr)
+         i+= step
+         step++
+     }
+    return result
+}
+console.log(buildStair(arr))
 ```
 
 
