@@ -2998,8 +2998,7 @@ function reverseOddIndex(arr){
 console.log(reverseOddIndex(arr))
 ```
 ## 📌 116. Replace digits with
-```
-javascript
+```javascript
 let str ="a1b2c3"
 
 // Output: "a#b#c#"
@@ -3018,8 +3017,7 @@ function replaceDigits(str){
 console.log(replaceDigits(str))
 ```
 ## 📌 117. Sum numbers in string
-```
-javascript
+```javascript
 
 let str ="ab12cd3"
 // Output:15
@@ -3041,8 +3039,7 @@ function sumNumbersInString(str){
 console.log(sumNumbersInString(str))
 ```
 ## 📌 118. Reverse but keep special chars
-```
-javascript
+```javascript
 let str ="a@b#c"
 // Output:"c@b#a"
 
@@ -3073,8 +3070,7 @@ console.log(reverseStr(str))
 ```
 
 ## 📌 119. Remove characters at prime indices
-```
-javascript
+```javascript
 let str = "javascript"
 
 // output = "jvsrpt"
