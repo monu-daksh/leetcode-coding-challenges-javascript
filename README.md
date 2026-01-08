@@ -2223,7 +2223,6 @@ console.log(+[[]]);             // ?
 console.log(+[1,2,3]);          // ?
 
 ```
-
 ## 📌 87. Create a maskEmail function
 ```javascript
 Input:
@@ -2243,8 +2242,6 @@ function encrptEmail(email){
 console.log(encrptEmail(str))
 
 ```
-
-
 ## 📌 88. 
 Implement a function storeData(obj) that stores objects in an array.
 If a new object has the same id, replace the old one with the latest.
