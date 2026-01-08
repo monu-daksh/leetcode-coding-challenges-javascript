@@ -103,8 +103,6 @@ let nums = [1, 5, 3, 4, 2], k = 2
 
 function countPair(nums, k){
     nums.sort((a, b) => a - b)
-    
-     
      let i =0
      let j = 1
      
@@ -182,7 +180,6 @@ function sumeOfConsecutiveArr(arr){
     }
     return longestArr.reduce((acc, sum) => acc += sum, 0)
 }
-
 console.log(sumeOfConsecutiveArr(arr))
 
 ```
@@ -199,7 +196,6 @@ function areAllWordsPalindrome(sentence) {
         word => word === word.split("").reverse().join("")
     );
 }
-
 console.log(areAllWordsPalindrome(str)); 
 
 ```
@@ -208,7 +204,6 @@ console.log(areAllWordsPalindrome(str));
 
 let arr = [1, 2, 3, 4, 5]
 // Output: [5, 4, 3, 2, 1]
-
 
 function reverseArr(arr){
     let right = arr.length -1
@@ -222,8 +217,6 @@ function reverseArr(arr){
 }
 console.log(reverseArr(arr))
 ```
-
-
 ## 📌 8. Remove Duplicates (in-place)
 ```javascript
 let arr = [1,2,2,3,4,4,5]
