@@ -2381,6 +2381,41 @@ async function unstableAPI() {
 retry(unstableAPI, 3)
   .then(res => console.log("Result:", res))
   .catch(err => console.error("Final Error:", err));
+
+#Function to Be Throttled
+
+function throttle(fn, limit) {
+  let isThrottled = false;
+
+  return function (...args) {
+    if (!isThrottled) {
+      fn.apply(this, args);   // run immediately
+      isThrottled = true;
+
+      setTimeout(() => {
+        isThrottled = false;  // allow next call
+      }, limit);
+    }
+  };
+}
+
+
+function logScroll() {
+  console.log("Function executed at:", new Date().toLocaleTimeString());
+}
+
+const throttledLog = throttle(logScroll, 1000);
+
+
+
+setTimeout(throttledLog, 300);
+setTimeout(throttledLog, 600);
+setTimeout(throttledLog, 1100);
+setTimeout(throttledLog, 1500);
+
+
+
+  
 ```
 ## 📌 91. Implement Retry Logic
 ```javascript
