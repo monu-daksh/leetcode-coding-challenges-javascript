@@ -3222,7 +3222,6 @@ console.log(subtractNextOne(arr))
 ## 📌 123. Insert sum between every two numbers
 ```javascript
 let arr = [2, 4, 6]
-
 // output:-> [2, 6, 4, 10, 6]
 
 function insertSumBetween(arr){
@@ -3242,9 +3241,7 @@ console.log(insertSumBetween(arr))
 ```
 ## 📌 124. Remove keys whose values are falsy (deep)
 ```javascript
-
 let obj = { a: 0, b: { c: null, d: 4 } }
-
 // output:-> { b: { d: 4 } }
 
 function removeFalseValues(obj, result={}){
@@ -3300,10 +3297,8 @@ console.log(groupElement(obj))
 ```
 ## 📌 126. Expand string by index position
 ```javascript
-
 let str = "abc"
-
-// "abbccc"
+// output: "abbccc"
 
 function expandStringByIndex(str){
     return str.split("").reduce((acc, char, index)=>{
@@ -3354,7 +3349,6 @@ console.log(fillGapWithPre(arr))
 ```
 ## 📌 128. Insert sum after every N elements
 ```javascript
-
 let arr =[1,2,3,4,5,6], n=3
 // Output: [1,2,3,6,4,5,6,15]
 
