@@ -103,8 +103,6 @@ let nums = [1, 5, 3, 4, 2], k = 2
 
 function countPair(nums, k){
     nums.sort((a, b) => a - b)
-    
-     
      let i =0
      let j = 1
      
@@ -182,7 +180,6 @@ function sumeOfConsecutiveArr(arr){
     }
     return longestArr.reduce((acc, sum) => acc += sum, 0)
 }
-
 console.log(sumeOfConsecutiveArr(arr))
 
 ```
@@ -199,7 +196,6 @@ function areAllWordsPalindrome(sentence) {
         word => word === word.split("").reverse().join("")
     );
 }
-
 console.log(areAllWordsPalindrome(str)); 
 
 ```
@@ -208,7 +204,6 @@ console.log(areAllWordsPalindrome(str));
 
 let arr = [1, 2, 3, 4, 5]
 // Output: [5, 4, 3, 2, 1]
-
 
 function reverseArr(arr){
     let right = arr.length -1
@@ -222,8 +217,6 @@ function reverseArr(arr){
 }
 console.log(reverseArr(arr))
 ```
-
-
 ## 📌 8. Remove Duplicates (in-place)
 ```javascript
 let arr = [1,2,2,3,4,4,5]
@@ -2223,7 +2216,6 @@ console.log(+[[]]);             // ?
 console.log(+[1,2,3]);          // ?
 
 ```
-
 ## 📌 87. Create a maskEmail function
 ```javascript
 Input:
@@ -2243,8 +2235,6 @@ function encrptEmail(email){
 console.log(encrptEmail(str))
 
 ```
-
-
 ## 📌 88. 
 Implement a function storeData(obj) that stores objects in an array.
 If a new object has the same id, replace the old one with the latest.
@@ -2391,6 +2381,41 @@ async function unstableAPI() {
 retry(unstableAPI, 3)
   .then(res => console.log("Result:", res))
   .catch(err => console.error("Final Error:", err));
+
+#Function to Be Throttled
+
+function throttle(fn, limit) {
+  let isThrottled = false;
+
+  return function (...args) {
+    if (!isThrottled) {
+      fn.apply(this, args);   // run immediately
+      isThrottled = true;
+
+      setTimeout(() => {
+        isThrottled = false;  // allow next call
+      }, limit);
+    }
+  };
+}
+
+
+function logScroll() {
+  console.log("Function executed at:", new Date().toLocaleTimeString());
+}
+
+const throttledLog = throttle(logScroll, 1000);
+
+
+
+setTimeout(throttledLog, 300);
+setTimeout(throttledLog, 600);
+setTimeout(throttledLog, 1100);
+setTimeout(throttledLog, 1500);
+
+
+
+  
 ```
 ## 📌 91. Implement Retry Logic
 ```javascript
@@ -3008,8 +3033,7 @@ function reverseOddIndex(arr){
 console.log(reverseOddIndex(arr))
 ```
 ## 📌 116. Replace digits with
-```
-javascript
+```javascript
 let str ="a1b2c3"
 
 // Output: "a#b#c#"
@@ -3028,8 +3052,7 @@ function replaceDigits(str){
 console.log(replaceDigits(str))
 ```
 ## 📌 117. Sum numbers in string
-```
-javascript
+```javascript
 
 let str ="ab12cd3"
 // Output:15
@@ -3051,8 +3074,7 @@ function sumNumbersInString(str){
 console.log(sumNumbersInString(str))
 ```
 ## 📌 118. Reverse but keep special chars
-```
-javascript
+```javascript
 let str ="a@b#c"
 // Output:"c@b#a"
 
@@ -3083,8 +3105,7 @@ console.log(reverseStr(str))
 ```
 
 ## 📌 119. Remove characters at prime indices
-```
-javascript
+```javascript
 let str = "javascript"
 
 // output = "jvsrpt"
@@ -3201,7 +3222,6 @@ console.log(subtractNextOne(arr))
 ## 📌 123. Insert sum between every two numbers
 ```javascript
 let arr = [2, 4, 6]
-
 // output:-> [2, 6, 4, 10, 6]
 
 function insertSumBetween(arr){
@@ -3221,9 +3241,7 @@ console.log(insertSumBetween(arr))
 ```
 ## 📌 124. Remove keys whose values are falsy (deep)
 ```javascript
-
 let obj = { a: 0, b: { c: null, d: 4 } }
-
 // output:-> { b: { d: 4 } }
 
 function removeFalseValues(obj, result={}){
@@ -3279,10 +3297,8 @@ console.log(groupElement(obj))
 ```
 ## 📌 126. Expand string by index position
 ```javascript
-
 let str = "abc"
-
-// "abbccc"
+// output: "abbccc"
 
 function expandStringByIndex(str){
     return str.split("").reduce((acc, char, index)=>{
@@ -3306,7 +3322,6 @@ let arr = [2,null,null,5,null,7]
 
 
 function fillGapWithPre(arr){
-
    Solution 1:--
 
     let result = [];
@@ -3320,11 +3335,9 @@ function fillGapWithPre(arr){
             result.push(arr[i]);
         }
     }
-
     return result;
 
     Soluttion 2:--
-
     for(let i=0; i < arr.length; i++){
         if(arr[i] === null){
             arr[i] = arr[i-1]
@@ -3332,8 +3345,114 @@ function fillGapWithPre(arr){
     }
     return arr
 }
-
 console.log(fillGapWithPre(arr))
 ```
+## 📌 128. Insert sum after every N elements
+```javascript
+let arr =[1,2,3,4,5,6], n=3
+// Output: [1,2,3,6,4,5,6,15]
+
+
+function insertSum(arr, n){
+    let result = []
+    let sum = 0
+    let count =0
+    
+    for(let i =0; i < arr.length; i++){
+        result.push(arr[i])
+
+        sum += arr[i]
+        count += 1
+        
+        if(count === n){
+            result.push(sum)
+            count =0
+            sum= 0
+        }
+    }
+   return result
+}
+console.log(insertSum(arr, n))
+```
+## 📌 129. Build staircase array
+```javascript
+  let arr = [1,2,3,4,5,6]
+// Output: [[1],[2,3],[4,5,6]]
+
+
+function buildStair(arr){
+    
+    let result = []
+    let step = 1
+    
+     for(let i =0; i < arr.length;){
+         let subArr = arr.slice(i, i+step)
+         result.push(subArr)
+         i+= step
+         step++
+     }
+    return result
+}
+console.log(buildStair(arr))
+```
+## 📌 130. Expand number pattern
+```javascript
+
+let str = "a2b3"
+// Output: "aabbb"
+
+function expandStr(str){
+    let result = ""
+    let char = null
+    
+    for(let i=0; i < str.length; i++){
+        if(isNaN(str[i])){
+            char = str[i]
+        }else{
+            result += char.repeat(Number(str[i]))
+        }
+    }
+    return result
+}
+
+console.log(expandStr(str))
+```
+## 📌 131. Deep merge with sum
+```javascript
+let obj1 = {a:2,b:{x:3}, c:1}
+let obj2 = {a:5,b:{x:1}, d:2}
+// Output: { a: 7, b: { x: 4 }, c: 1, d: 2 }
+
+function mergeObj(obj1, obj2){
+    
+    let result = {...obj1}
+    
+    for(let key in obj2){
+        if(typeof obj2[key] === "object" && obj2[key] !== null){
+            result[key] = mergeObj(result[key], obj2[key])
+        }else if(result[key]){
+            result[key] = result[key] + obj2[key]
+        }else{
+            result[key] = obj2[key]
+        }
+    }
+    return result
+}
+console.log(mergeObj(obj1, obj2))
+```
+## 📌 132. Group by property
+```javascript
+let arr = [{type:"a"},{type:"b"},{type:"a"}]
+// Output: {a:2,b:1}
+
+function groupElementByProp(arr){
+    return arr.reduce((acc, obj)=>{
+          acc[obj.type] = (acc[obj.type]|| 0) +1
+          return acc
+    }, {})
+}
+console.log(groupElementByProp(arr))
+```
+
 
 
