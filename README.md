@@ -1626,7 +1626,6 @@ console.log(findMajorityElement(arr))
 ```
 ## 📌 66. Find duplicate values
 ```javascript
-
 let arr = [4,3,2,7,8,2,3,1]
 // Output: [2,3]
 
@@ -1803,7 +1802,6 @@ console.log(findSubArr(arr, target))
 ```
 ## 📌 74. Rearrange Array Alternating Positive & Negative
 ```javascript
-
 let arr =[1, 2, -3, -4, -5, 6, -7]
 // Output: [1, -3, 2, -4, 6, -5, -7]
 
@@ -1825,7 +1823,6 @@ console.log(rearrange(arr))
 ```
 ## 📌 75. Maximum Sum Subarray (Kadane’s Algorithm)
 ```javascript
-
 let arr = [-2,1,-3,4,-1,2,1,-5,4]
 //{ maxSum: 6, subArray: [4, -1, 2, 1] }
 
@@ -1902,7 +1899,6 @@ function getName(){
 ```
 ## 📌 78. Function inside block scope
 ```javascript
-
 'use strict';
 if (true) {
   function test() {
