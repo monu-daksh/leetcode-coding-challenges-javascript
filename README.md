@@ -2269,7 +2269,6 @@ console.log(storeData({ id: 1, name: "Monu" }));
 console.log(storeData({ id: 2, name: "Daksh" }));
 console.log(storeData({ id: 1, name: "Monu Updated" }));
 ```
-
 ## 📌 89. Create a Rate Limiter
 ```javascript
 Implement a function that limits how many times a function can be called per second.
@@ -2312,7 +2311,6 @@ setTimeout(() => limitedHello("Alice"), 1100); //  runs after 1.1s
 
 
 ```
-
 ## 📌 90. Track Login Attempts
 ```javascript
 Write a function loginTracker(userId) that stores how many times a user logs in.
@@ -2343,7 +2341,6 @@ console.log(trackLogin("daksh")); // 2
 ```
 ## 📌 91. Implement Retry Logic
 ```javascript
-
 // retry(fn, n)
 // fn → async function that might fail
 // n  → number of retry attempts
@@ -2411,15 +2408,10 @@ const throttledLog = throttle(logScroll, 1000);
 setTimeout(throttledLog, 300);
 setTimeout(throttledLog, 600);
 setTimeout(throttledLog, 1100);
-setTimeout(throttledLog, 1500);
-
-
-
-  
+setTimeout(throttledLog, 1500);  
 ```
 ## 📌 91. Implement Retry Logic
 ```javascript
-
 async function retry(fn, retries) {
   for (let attempt = 1; attempt <= retries; attempt++) {
     try {
@@ -2481,7 +2473,6 @@ async function run(){
 }
 run()
 ```
-
 ## 📌 95. Transform Nested User Data
 ```javascript
 let obj = { 
@@ -2534,7 +2525,6 @@ console.log(mergeArrs(users, orders))
 ```
 ## 📌 96. Replace All Nested String Values
 ```javascript
-
 let obj ={
   name: "monu",
   details: { city: "delhi", country: "india" }
